@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <title>
+            Alex Muscar -- Problem list for the Programming Techniques project, Spring 2011
+        </title>
+        <link rel="stylesheet" type="text/css" href="../../../../css/default.css">
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-21617224-1']);
+          _gaq.push(['_trackPageview']);
+          
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        </script>
+    </head>
+    <body>
+        <div id="siteWrapper">
+            <h1 class="vcard author">
+                <a href="../../../.." title="Home" class="fn">Alex Muscar</a>
+            </h1>
+            <div id="mainNav">
+                <ul>
+                    <li>
+                        <a href="../../../../teaching.html" title="Teaching">Teaching</a>
+                    </li>
+                    <li>
+                        <a href="../../../../tbd.html" title="Projects">Projects</a>
+                    </li>
+                    <li>
+                        <a href="../../../../tbd.html" title="Blog">Blog</a>
+                    </li><!-- <li>
+                        <a href="http://muscar.github.com/feed/">Subscribe</a>
+                    </li> -->
+                </ul>
+            </div>
+            <div id="siteDescription">
+                PhD Student • University of Craiova • Faculty of Automation, Computers and Electronics • Software Engineering Department
+            </div>
+            <div id="coreContent">
+                <div class="entryContent">
+                    <div id="textbook-problems"><h3>Textbook problems</h3>
+<ol style="list-style-type: decimal">
+<li><em>The change-making problem</em>: “How can an amount of money be made with the least number of coins of given denominations?”</li>
+<li><em>The rod-cutting problem</em>: “Given a rod of length <em>n</em> and a table of prices for rods of length from 1 to <em>n</em>, determine the maximum revenue obtainable by cutting up the rod and selling the pieces. Note that an optimal solution may require no cutting at all.”</li>
+<li><em>The eight queens problem</em>: “Place eight queens on an 8×8 chessboard so that none of them can capture any other using the standard queen’s moves. The queens must be placed in such a way that no two queens attack each other.”</li>
+<li><em>The task-scheduling problem</em>: “Schedule several competing activities that require exclusive use of a common resource, with a goal of selecting a maximum-size set of mutually compatible activities. Given that an activity has a start time and a finish time two activities are compatible if the intervals between theirs start and finish times don’t overlap.”</li>
+<li>Implement two algorithms for minimum spanning trees (e.g. Prim’s algorithm and Kruskal’s algorithm).</li>
+</ol></div>
+<div id="libraries"><h3>Libraries</h3>
+<ol style="list-style-type: decimal">
+<li>A library for <em>safe</em> string manipulation. The library will implement alternatives for the most common string manipulation functions: <code>strcat</code>, <code>strcpy</code>, <code>strlen</code> and <code>gets</code> for reading strings. The library functions <em>must</em> perform sanity checks to avoid buffer overruns and to ensure that all strings are null-terminated after each operation.</li>
+<li>A library for linked lists. The library should implement singly and doubly linked lists. The operations provided by the library should be: initialization of an empty list, adding a value at the beginning and at the end, inserting an item at a specified position, removing an item at a specified position, computing the length of a list and appending two lists.</li>
+<li>A library for binary search trees (<em>BST</em>). The library should provide operations for: creating an empty tree, inserting a node into a tree, deleting a node and at least two different traversal strategies — the traversal functions must accept a function which will be passed the current element.</li>
+<li>A library for priority queues using <em>heaps</em>. The library should implement both min-priority queues and max-priority queues. The library should provide operations for inserting an element with a certain priority, finding the maximum/minimum element, extracting the maximum/minimum element and altering an element’s priority.</li>
+<li>A library for hash tables. Collisions should be resolved by chaining. The size of the hash table should be dynamically adjusted to accommodate as many keys as necessary.</li>
+<li>A library which implements at least two efficient sorting algorithms (e.g. quick-sort, merge-sort). The sorting functions should have in a similar way to the standard <code>qsort</code> function (i.e. they should work for elements of any type as long as an ordering function is provided).</li>
+<li>A library for operations with large numbers. The library should provide at least addition, subtraction, multiplication, division and taking the square root.</li>
+<li>A library for operations with sparse matrices. The library should provide at least addition and multiplication.</li>
+<li>A library for associative arrays implemented using prefix trees (<em>tries</em>). The array will accept string keys and values of any type and it will expose the following functionality: adding a new value indexed by a key, reassigning the value for a key and lookup for key values.</li>
+<li>A library for representing oriented graphs. The library should allow to insert vertices, remove vertices, traverse the graph depth-first and breadth-first.</li>
+<li>A library for disjoint sets. Given a set of elements it is often useful to break them up or partition them into a number of separate, non-overlapping sets. A disjoint-set data structure is a data structure that keeps track of such a partitioning. The library must allow to determine which set a particular element is in (also useful for determining if two elements are in the same set) and combine or merge two sets into a single set.</li>
+</ol></div>
+<div id="applications"><h3>Applications</h3>
+<ol style="list-style-type: decimal">
+<li>Since programming is such a sedentary job programmers need to watch their weight. The programmers in a company have access to all sorts of snacks in the cafeteria (with varying caloric intake), but they also have access to a gym and various activities that help them burn calories so that they maintain their weight. Given a list of activities and their caloric impact write a program that finds a combination of activities that keep the caloric intake to 0. Your program should take its input from a file. You can use any format for the input as long as it gives the name of the activity and the caloric intake (which should be a positive for snacks and negative for activities that burn calories). Print the list of activities to <em>stdout</em> if a solution is found or the message “no solution” otherwise.</li>
+<li>Write an interpreter for a simple language that recognizes both negative and positive integer constants, variable assignment (e.g. <code>a = 1 * 2</code>) and the basic mathematical operators: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> and <code>^</code> for exponentiation. Once read the expressions should be represented as binary trees which will be used to compute the result. The interpreter should present the user with a <a href="http://en.wikipedia.org/wiki/Read-eval-print_loop">Read Eval Print Loop (<em>REPL</em>)</a>.</li>
+<li>Write an interpreter for the <a href="http://www.muppetlabs.com/~breadbox/bf/">BF language</a>.</li>
+<li>Write a simple <a href="http://en.wikipedia.org/wiki/Shell_(computing)">shell</a> with the following built-in functionality: listing files (sorted in natural order), showing the content of a file and showing the number of words and lines in a file. You can see how the linux <code>ls -l</code>, <code>cat</code> and <code>wc</code> commands behave for inspiration.</li>
+<li>Write an interpreter for evaluating polynomials represented using linked lists. The interpreter should allow for addition, subtraction and evaluation of a polynomial. The interpreter should provide a syntax similar to that specified in problem 2.</li>
+<li>Write a dictionary application. The dictionary should allow for inserting a word, updating the definition of an existing word and looking up definition of a word. Note that a word may have <em>multiple</em> definitions attached to it. The dictionary should use files for storing and loading its data.</li>
+<li>Write a program that generates random text that reads well by using the <em>Markov chains</em>. The program will read text from a file. Start by reading the first two words (i.e. sequences of characters delimited by one or more spaces) from the file, say <code>w1</code> and <code>w2</code>. Using the pair <code>(w1, w2)</code> as a key insert the the word following them, <code>w3</code>, in a hash table. Replace the pair <code>(w1, w2)</code> with <code>(w2, w3)</code> and repeat until the end of the file. Note that each key made out of a pair of words will have a list of words as a value. In order to generate text start with the first key in the hash table <code>(w1, w2)</code>, print <code>w1</code> and <code>w2</code>, and then randomly pick one of he words in the list associated to the key, <code>w3</code>, and replace the key by <code>(w2, w3)</code>. Repeat the process for a fixed number of steps.</li>
+<li>Write a spell checker using the <a href="http://en.wikipedia.org/wiki/Levenshtein_distance">Levenshtein distance</a>. The spell-checker will take an input file and it will output a list of misspelled words and the suggestions for them on <em>stdout</em>.</li>
+</ol></div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            Powered by <a href="http://github.com/jaspervdj/hakyll">hakyll</a> and <a href="http://jimbarraud.com/manifest/">Manifest</a>.
+        </div>
+    </body>
+</html>
