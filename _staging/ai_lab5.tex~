@@ -1,0 +1,90 @@
+\documentclass{article}
+\usepackage{amssymb,amsmath}
+\usepackage[mathletters]{ucs}
+\usepackage[utf8x]{inputenc}
+% Redefine labelwidth for lists; otherwise, the enumerate package will cause
+% markers to extend beyond the left margin.
+\makeatletter\AtBeginDocument{%
+  \renewcommand{\@listi}
+    {\setlength{\labelwidth}{4em}}
+}\makeatother
+\usepackage{enumerate}
+\usepackage{array}
+% This is needed because raggedright in table elements redefines \\:
+\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
+\let\PBS=\PreserveBackslash
+\usepackage[breaklinks=true,unicode=true,pdfborder={0 0 0}]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setcounter{secnumdepth}{0}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{microtype}
+
+\begin{document}
+    \title{Homework for the Artificial Intelligence lab \#1 (28.02 - 04.03)}
+    \author{Alex Muscar}
+    \maketitle
+
+\begin{enumerate}[1.]
+\item
+  Given a knowledge base whose facts are instances of the predicates
+  \verb!parent(Parent, Child)!, \verb!male(Person)! and
+  \verb!female(Person)! (make sure your data makes the requested
+  predicates and queries possible):
+  \begin{itemize}
+  \item
+    Add some sample data to your program
+  \item
+    Write predicates for the following relations:
+    \begin{itemize}
+    \item
+      \verb!father(Father, Child)!
+    \item
+      \verb!mother(Mother, Child)!
+    \item
+      \verb!son(Parent, Child)!
+    \item
+      \verb!daughter(Parent, Child)!
+    \item
+      \verb!grandfather(Grandpa, Child)!
+    \item
+      \verb!grandmother(Grandma, Child)!
+    \item
+      \verb!grandson(Grandparent, Child)!
+    \item
+      \verb!granddaughter(Grandparent, Child)!
+    \end{itemize}
+  \item
+    Write the following queries:
+    \begin{itemize}
+    \item
+      Who is a son?
+    \item
+      Who is a grandparent?
+    \item
+      Who is a son and a father?
+    \end{itemize}
+  \end{itemize}
+\item
+  You are given the following geometric figures: a blue triangle, a red
+  square, a blue diamond, a green parallelogram and a red pentagon.
+  Implement the following:
+  \begin{itemize}
+  \item
+    Write facts that describe the figures given above. Each fact is of
+    the form \verb!figure(Name, Color, NumberOfSides)!
+  \item
+    Define a rules for geometric figures with 4 sides (any color)
+  \item
+    Define a rule for red figures
+  \end{itemize}
+\item
+  Two children can participate in a tennis match if they have the same
+  age. Given the following children: Andrei (9 years old), Bogdan (12
+  years old), Ana (9 years old), Sebi (9 years old), write a fact that 
+  describes each child and using the facts you just defined write a 
+  rule to determine \emph{all} possible pairs of children that can 
+  participate at a tennis match.
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage{amssymb,amsmath}
+\usepackage[mathletters]{ucs}
+\usepackage[utf8x]{inputenc}
+% Redefine labelwidth for lists; otherwise, the enumerate package will cause
+% markers to extend beyond the left margin.
+\makeatletter\AtBeginDocument{%
+  \renewcommand{\@listi}
+    {\setlength{\labelwidth}{4em}}
+}\makeatother
+\usepackage{enumerate}
+\usepackage{array}
+% This is needed because raggedright in table elements redefines \\:
+\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
+\let\PBS=\PreserveBackslash
+\usepackage[breaklinks=true,unicode=true,pdfborder={0 0 0}]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setcounter{secnumdepth}{0}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{microtype}
+
+\begin{document}
+\title{Homework for the Artificial Intelligence lab \#5 (28.03 - 01.03)}
+\author{Alex Muscar}
+\maketitle
+
+\begin{tabular}
+\end{tabular}
+
+\end{document}
+
+% LocalWords:  Muscar liniarize ListOfLists liniarized InvertedList subst
