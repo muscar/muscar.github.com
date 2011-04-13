@@ -56,11 +56,11 @@
 <div id="schedule"><h3>Schedule</h3> 
 <p><strong>21.02 - 25.02</strong> — Administrativia</p> 
 <p><strong>28.02 - 04.03</strong> — Intro to Prolog <a href="homework/ai_lab1.pdf">[homework]</a> • <a href="slides/intro_to_prolog.pdf">[slides]</a></p> 
-<p><strong>07.03 - 11.03</strong> — Variable-free interpretations and proofs (top-down and bottom-up) (<em>seminar</em>) [homework — coming soon] • <a href="slides/int_proof.pdf">[slides]</a></p> 
+<p><strong>07.03 - 11.03</strong> — Variable-free interpretations and proofs (top-down and bottom-up) (<em>seminar</em>) <a href="slides/int_proof.pdf">[slides]</a></p> 
 <p><strong>14.03 - 18.03</strong> — Recursion in Prolog. Compound terms <a href="homework/ai_lab3.pdf">[homework]</a> • <a href="slides/rec.pdf">[slides]</a></p> 
 <p><strong>21.03 - 25.03</strong> — Proofs with variables (top-down and bottom-up) (<em>seminar</em>)</p> 
-<p><strong>28.03 - 01.04</strong> — Lists</p> 
-<p><strong>04.04 - 08.04</strong> — Uninformed search (<em>seminar</em>)</p> 
+<p><strong>28.03 - 01.04</strong> — Lists <a href="homework/ai_lab5.pdf">[homework]</a></p> 
+<p><strong>04.04 - 08.04</strong> — Uninformed search (<em>seminar</em>) <a href="slides/uninformed_search.pdf">[slides]</a></p>
 <p><strong>11.04 - 15.04</strong> — Uninformed search in Prolog</p> 
 <p><strong>18.04 - 22.04</strong> — Heuristic search (<em>seminar</em>)</p> 
 <p><strong>25.04 - 29.04</strong> — <em>Spring break</em></p> 
