@@ -1,0 +1,218 @@
+/*
+ *  psd2css.css
+ *
+ *  This is your external CSS style sheet. It defines all of the CSS styles that you
+ *  are using in your page.  If you are going to create multiple pages from the same
+ *  PSD file (like a template), you will share this CSS style sheet between the various
+ *  pages.
+ *
+ *  This file was originally generated at http://psd2cssonline.com 
+ *  May 9, 2010, 4:34 pm with psd2css Online version 1.77
+ *
+ */
+
+/* You named this layer Background */
+#Layer-1 {
+  position: absolute;
+  left: +0px;
+  top: +0px;
+  width: 1200px;
+  height: 980px;
+  z-index: 1;
+}
+
+/* You named this layer Layer 6 */
+#Layer-2 {
+  position: absolute;
+  left: 345px;
+  top: 889px;
+  width: 119px;
+  height: 37px;
+  z-index: 2;
+}
+
+/* You named this layer Layer 5 */
+#Layer-3 {
+  position: absolute;
+  left: 493px;
+  top: 884px;
+  width: 32px;
+  height: 50px;
+  z-index: 3;
+}
+
+/* You named this layer Layer 7 */
+#Layer-4 {
+  position: absolute;
+  left: 550px;
+  top: 893px;
+  width: 88px;
+  height: 39px;
+  z-index: 4;
+}
+
+/* You named this layer Layer 8 */
+#Layer-5 {
+  position: absolute;
+  left: 663px;
+  top: 899px;
+  width: 158px;
+  height: 29px;
+  z-index: 5;
+}
+
+/* You named this layer ORGANISED BY       PROCEEDINGS */
+#Layer-6 {
+  position: absolute;
+  left: 109px;
+  top: 406px;
+  width: 197px;
+  height: 381px;
+  z-index: 6;
+}
+
+/* You named this layer Layer 3 */
+#Layer-7 {
+  position: absolute;
+  left: 4px;
+  top: 112px;
+  width: 175px;
+  height: 56px;
+  z-index: 7;
+}
+
+/* You named this layer Layer 1 copy */
+#Layer-8 {
+  position: absolute;
+  left: 2px;
+  top: 27px;
+  width: 184px;
+  height: 32px;
+  z-index: 8;
+}
+
+/* You named this layer Layer 14 */
+#Layer-9 {
+  position: absolute;
+  left: 329px;
+  top: 380px;
+  width: 502px;
+  height: 460px;
+  z-index: 9;
+}
+
+/* You named this layer Layer 2 copy 2 */
+#Layer-10 {
+  position: absolute;
+  left: -25px;
+  top: +100px;
+  width: 1237px;
+  height: 280px;
+  z-index: 10;
+}
+
+/* You named this layer Welcome  The International Con */
+#Layer-11 {
+  position: absolute;
+  left: 32px;
+  top: 26px;
+  width: 441px;
+  height: 360px;
+  z-index: 11;
+}
+
+/* You named this layer Important Dates   Electronic s */
+#Layer-12 {
+  position: absolute;
+  left: 851px;
+  top: 402px;
+  width: 227px;
+  height: 367px;
+  z-index: 12;
+}
+
+/* You named this layer Layer 10 */
+#Layer-13 {
+  position: absolute;
+  left: 355px;
+  top: 19px;
+  width: 240px;
+  height: 240px;
+  z-index: 13;
+}
+
+/* You named this layer Layer 11 */
+#Layer-14 {
+  position: absolute;
+  left: 875px;
+  top: 19px;
+  width: 240px;
+  height: 240px;
+  z-index: 14;
+}
+
+/* You named this layer Layer 12 */
+#Layer-15 {
+  position: absolute;
+  left: 615px;
+  top: 19px;
+  width: 240px;
+  height: 240px;
+  z-index: 15;
+}
+
+/* You named this layer Home Organisation Call For Pap */
+#Layer-16 {
+  position: absolute;
+  left: 136px;
+  top: 33px;
+  width: 125px;
+  height: 213px;
+  z-index: 16;
+}
+
+/* You named this layer WIMS\'11 */
+#Layer-17 {
+  position: absolute;
+  left: 110px;
+  top: 36px;
+  width: 217px;
+  height: 43px;
+  z-index: 17;
+}
+
+/* You named this layer International Conference on We */
+#Layer-18 {
+  position: absolute;
+  left: 360px;
+  top: 39px;
+  width: 546px;
+  height: 17px;
+  z-index: 18;
+}
+
+/* You named this layer MAY 25 - 27, 2011 */
+#Layer-19 {
+  position: absolute;
+  left: 360px;
+  top: 62px;
+  width: 192px;
+  height: 21px;
+  z-index: 19;
+}
+
+/* Here are some examples of how you might want to change the
+ * look and behavior of the links on your page.  Some examples for
+ * further customization are included in comments.  */
+a {
+  cursor: pointer;
+  outline: none;
+}
+a:link { color: #F88; }
+a:visited { color: #F88; }
+a:hover {
+  color: #F00;
+  /* text-decoration: underline; */
+  /* font-weight: bold; */
+}
+

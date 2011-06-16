@@ -1,0 +1,55 @@
+/**
+ * "Yet Another Multicolumn Layout" - (X)HTML/CSS framework
+ * (en) central stylesheet
+ * (de) zentrales Stylesheet
+ *
+ * @creator       YAML Builder V1.2.1 (http://builder.yaml.de)
+ * @file          my_layout.css
+ * @-yaml-minver  3.3
+ * 
+ */
+
+/* import core styles | Basis-Stylesheets einbinden */
+@import url(base.css);
+
+/* import screen layout | Screen-Layout einbinden */
+@import url(nav_shinybuttons.css);
+@import url(basemod.css);
+@import url(content.css);
+
+h1 {
+    color: #FF4800;
+    font-family: sans;
+    font-weight: normal;
+}
+
+p {
+    text-align: justify;
+}
+
+#tagline {
+    color: #484848;
+    font-size: larger;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#dateline {
+    color: #686868;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.organizer {
+    color: #686868;
+    float: left;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.organizer_logo {
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}

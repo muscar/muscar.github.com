@@ -1,0 +1,99 @@
+@charset "UTF-8";
+/**
+ * "Yet Another Multicolumn Layout" - (X)HTML/CSS Framework
+ *
+ * (en) Screen layout for YAML examples
+ * (de) Bildschirmlayout für YAML-Beispiele
+ *
+ * @copyright       Copyright 2005-2007, Dirk Jesse
+ * @license         CC-A 2.0 (http://creativecommons.org/licenses/by/2.0/),
+ *                  YAML-C (http://www.yaml.de/en/license/license-conditions.html)
+ * @link            http://www.yaml.de
+ * @package         yaml
+ * @version         3.0.2
+ * @revision        $Revision: 107 $
+ * @lastmodified    $Date: 2007-08-01 18:27:14 +0200 (Mi, 01 Aug 2007) $
+ */
+
+@media all
+{
+  /*------------------------------------------------------------------------------------------------------*/
+
+  /**
+   * (en) Formatting YAML's  basic layout elements
+   * (de) Gestaltung des YAML Basis-Layouts
+   */
+
+  /* (en) Marginal areas & page background */
+  /* (de) Randbereiche & Seitenhintergrund */
+  body { background: #4d87c7 url("../../images/bg_blue.gif") repeat-x top left fixed; padding: 10px 0 0 0; }
+
+  /* (en) Layout: width, background, borders */
+  /* (de) Layout: Breite, Hintergrund, Rahmen */
+  .page_margins { background: #fff; min-width: 740px; max-width: 90em; margin: 0 auto; border: 0px #889 solid; }
+  .page{ padding: 10px; }
+
+  /* (en) Centering layout in old IE-versions */
+  /* (de) Zentrierung des Layouts in alten IE-versionen */
+  .page_margins { margin:0 auto; }
+
+  /* (en) Designing main layout elements */
+  /* (de) Gestaltung der Hauptelemente des Layouts */
+  #header {
+    color: #000;
+    background: #fff repeat-x top left;
+    padding: 45px 2em 1em 20px; 
+  }
+
+  #topnav { color: #aaa; background: transparent; }
+
+  /* (en) adjustment of main navigation */
+  /* (de) Anpassung der Hauptnavigation */
+  #nav { overflow:hidden; }
+  #nav ul { margin-left: 20px; padding-left: 0;}
+  #nav_main {background-color: #336}
+
+  #main { background: #fff; margin: 10px 0; }
+  #teaser { padding: 0 20px; margin: 10px 0; clear:both; }
+
+  #footer { 
+    color:#666; 
+    background: #f9f9f9;
+    padding: 10px 20px;
+    border-top: 5px #efefef solid;
+
+  }
+
+  /*------------------------------------------------------------------------------------------------------*/
+
+  /**
+   * (en) Formatting content container
+   * (de) Formatierung der Inhalts-Container
+   *
+   * |-------------------------------|
+   * | #header                       |
+   * |-------------------------------|
+   * | #col1   | #col3     | #col2   |
+   * | 25%     | flexible  | 25%     |
+   * |-------------------------------|
+   * | #footer                       |
+   * |-------------------------------|
+   */
+
+
+  #col1 { width: 25% }
+  #col1_content { padding: 10px 10px 10px 20px; }
+
+  #col2 { width: 25% }
+  #col2_content { padding: 10px 20px 10px 10px; }
+
+  #col3 { margin: 0 25% }
+  #col3_content { padding: 10px }
+	
+  /*------------------------------------------------------------------------------------------------------*/
+
+  /**
+   * (en) Modifying "shiny buttons" navigation
+   * (en) Anpassung der "Shiny Buttons" Navigation
+   */
+}

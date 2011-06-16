@@ -1,0 +1,81 @@
+/*
+ * jQuery Styles for YAML.de
+ *
+*/
+
+@media screen
+{
+.jquery_tabs {overflow:hidden;}
+
+.jquery_tabs > ul {
+	overflow:hidden;
+	margin:  0;
+	padding: 2px 0 0 4px;
+	background: #c8ddf3 url("../../yaml/navigation/images/sliding_door/round/bg.gif") repeat-x bottom;
+	border-bottom: 3px #fff solid;
+}
+
+.jquery_tabs .content {
+	margin:  0;
+	padding: 0;
+	border: 0 none;
+	border-top: 0px #000 solid;
+}
+
+.jquery_tabs > ul li {
+	list-style-type: none;
+	float: left;
+	margin: 0;
+	margin-right: 1px;
+	padding: 0 0 0 3px;
+	border-bottom: 1px solid #000;
+	background: #e0ecf8 url("../../yaml/navigation/images/sliding_door/round/left.png") no-repeat top left;
+}
+
+.jquery_tabs > ul li a {
+	display: block;
+	width: auto;
+	font-weight: normal;
+	font-size: 12px;
+	margin: 0;
+	color: #667;
+	padding: 3px 8px 1px 5px;
+	background: transparent url("../../yaml/navigation/images/sliding_door/round/right.png") no-repeat top right;
+	text-decoration: none;
+	text-transform: none;
+}
+
+.jquery_tabs > ul li:focus,
+.jquery_tabs > ul li:hover,
+.jquery_tabs > ul li:active {
+    background-color: #c4d0dc;
+    background-position: 0 -150px;
+  }
+
+.jquery_tabs > ul li:focus a,
+.jquery_tabs > ul li:hover a,
+.jquery_tabs > ul li:active a {
+	background-position: 100% -150px;
+  }
+
+.jquery_tabs > ul li a:focus,
+.jquery_tabs > ul li a:hover,
+.jquery_tabs > ul li a:active {
+	background-color: transparent; color: #223;
+}
+
+.jquery_tabs > ul li.current {
+	border: 0;
+	background: white url("../../yaml/navigation/images/sliding_door/round/left_on.png") no-repeat top left;
+}
+
+.jquery_tabs > ul li.current a {
+	background: transparent url("../../yaml/navigation/images/sliding_door/round/right_on.png") no-repeat top right;
+	color: #334;
+	font-weight: bold;
+	padding-bottom: 2px;
+	padding-top: 3px;
+}
+
+
+}
