@@ -17,6 +17,10 @@
 @import url(basemod.css);
 @import url(content.css);
 
+#col3_content {
+    font-size: 110%;
+}
+
 h1 {
     color: #FF4800;
     font-family: sans;
