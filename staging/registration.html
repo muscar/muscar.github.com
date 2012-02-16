@@ -9,6 +9,19 @@
 <!--[if lte IE 7]>
 <link href="css/patch_my_layout.css" rel="stylesheet" type="text/css" />
 <![endif]-->
+
+<style type="text/css">
+    label {
+        display: block;
+        float: left;
+        width: 100px;
+    }
+
+    input {
+        width: 300px;
+    }
+</style>
+
 </head>
 <body>
   <div class="page_margins">
@@ -234,8 +247,82 @@
 
 <h1>Registration and Payment</h1>
 
-<h3>Online Registration Payment</h3>
-<p>Coming soon</p>
+<h3>Online Registration and Payment</h3>
+<form action="#" method="post" accept-charset="utf-8">
+    <h4>Personal Information</h4>
+    <p>
+        <label for="title">Title</label>
+        <select name="title" id="title">
+            <option value="mr">Mr.</option>
+            <option value="mrs">Mrs.</option>
+            <option value="dr">Dr.</option>
+            <option value="prof">Prof.</option>
+        </select>
+    </p>
+    <p>
+        <label for="first_name">First Name</label>
+        <input type="text" name="first_name" value="" id="first_name"/>
+    </p>
+    <p>
+        <label for="last_name">Last Name</label>
+        <input type="text" name="last_name" value="" id="last_name"/>
+    </p>
+    <p>
+        <label for="affiliation">Affiliation</label>
+        <input type="text" name="affiliation" value="" id="affiliation"/>
+    </p>
+    <p>
+        <label for="address">Address</label>
+        <input type="text/submit/hidden/button" name="address" value="" id="address"/>
+    </p>
+    <p>
+        <label for="city">City</label>
+        <input type="text" name="city" value="" id="city"/>
+    </p>
+    <p>
+        <label for="zip_code">Zip Code</label>
+        <input type="text/submit/hidden/button" name="zip_code" value="" id="zip_code"/>
+    </p>
+    <p>
+        <label for="country">Country</label>
+        <input type="text" name="country" value="" id="country"/>
+    </p>
+    <p>
+        <label for="telephone">Telephone/Fax</label>
+        <input type="text" name="telephone" value="" id="telephone"/>
+    </p>
+    <p>
+        <label for="email">Email</label>
+        <input type="text" name="email" value="" id="email"/>
+    </p>
+    <h4>Paper Information</h4>
+    <p>For the first paper the participant must pay the full registration fee. For each additional paper he or she must pay 200 EUR.</p>
+    <p>
+        <label for="paper_1_id">Paper 1 ID</label>
+        <input type="text" name="paper_1_id" value="" id="paper_1_id"/>
+    </p>
+    <p>
+        <label for="paper_1_title">Paper 1 Title</label>
+        <input type="text" name="paper_1_title" value="" id="paper_1_title"/>
+    </p>
+    <p>
+        <label for="paper_2_id">Paper 2 ID</label>
+        <input type="text" name="paper_2_id" value="" id="paper_2_id"/>
+    </p>
+    <p>
+        <label for="paper_2_title">Paper 2 Title</label>
+        <input type="text" name="paper_2_title" value="" id="paper_2_title"/>
+    </p>
+    <p>
+        <label for="paper_3_id">Paper 3 ID</label>
+        <input type="text" name="paper_3_id" value="" id="paper_3_id"/>
+    </p>
+    <p>
+        <label for="paper_3_title">Paper 3 Title</label>
+        <input type="text" name="paper_3_title" value="" id="paper_3_title"/>
+    </p>
+    <p><input type="submit" value="Continue &rarr;"></p>
+</form>
 <h3>Offline Registration and Payment</h3>
 <p>
     Please fill-in, sign and fax <a href="/Wims12/offline-registration_form.doc">this</a> registration form to:<br/>
@@ -248,7 +335,15 @@
 <p>Alternatively you can send a scanned copy by email to: <a href="mailto:wims12@software.ucv.ro">wims12@software.ucv.ro</a> (with <a href="mailto:cbadica@software.ucv.ro">cbadica@software.ucv.ro</a> in CC).</p>
  
 <p>Also, for each payment by bank transfer please send a scanned copy of the bank swift message to <a href="mailto:wims12@software.ucv.ro">wims12@software.ucv.ro</a> (with <a href="mailto:cbadica@software.ucv.ro">cbadica@software.ucv.ro</a> in CC).</p>
-          </div>
+
+<h3>Cancellation Policy for the Registration</h3>
+<p>Author registrations cannot be returned after April 2, 2012.
+All other refund requests must be in writing and received before March 31, 2012.
+A 100 Euro cancellation fee will be deducted from the registration fees.
+Substitution of one conference attendee for another will be accepted at any time, on the
+basis of information of the change via email (<a href="mailto:wims12@software.ucv.ro">wims12@software.ucv.ro</a> with a carbon
+copy to <a href="mailto:cbadica@software.ucv.ro">cbadica@software.ucv.ro</a>). The submission to both addresses is requested.
+</p>          </div>
           <!-- IE Column Clearing -->
           <div id="ie_clearing"> &#160; </div>
         </div>
