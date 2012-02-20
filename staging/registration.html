@@ -1,370 +1,452 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-<title>WIMS'12</title>
-<!-- add your meta tags here -->
+    <head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<title>WIMS'12</title>
+	<!-- add your meta tags here -->
 
-<link href="css/my_layout.css" rel="stylesheet" type="text/css" />
-<!--[if lte IE 7]>
-<link href="css/patch_my_layout.css" rel="stylesheet" type="text/css" />
-<![endif]-->
+	<link href="css/my_layout.css" rel="stylesheet" type="text/css" />
+	<!--[if lte IE 7]>
+	<link href="css/patch_my_layout.css" rel="stylesheet" type="text/css" />
+	<![endif]-->
 
-<style type="text/css">
-    label {
-        display: block;
-        float: left;
-        width: 100px;
-    }
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="scripts/jquery-validation/jquery.validate.js" charset="utf-8"></script>
 
-    input {
-        width: 300px;
-    }
-</style>
+	<style type="text/css">
+	    label {
+		display: block;
+		float: left;
+		width: 110px;
+	    }
+
+	    input {
+		width: 300px;
+	    }
+	</style>
+
+	<script type="text/javascript" charset="utf-8">
+	    function computeGrandTotal() {
+		var registration_fee = parseFloat($("#registration_type").val());
+		var papers_fee = 0;
+
+		for (var i = 2; i <= 3; i++) {
+		    if ($("#paper_" + i + "_id").val() != "") {
+			papers_fee += 200;
+		    }
+		}
+
+		return registration_fee + papers_fee;
+	    }
+
+function updateGrandTotal() {
+    $("#grand_total").text(computeGrandTotal() + " " + $("#curr").val());
+}
+
+$(function () {
+	$("#grand_total").text(computeGrandTotal() + " " + $("#curr").val());
+
+	$("#registration_type").change(updateGrandTotal);
+
+	$("#paper_2_id").blur(updateGrandTotal);
+	$("#paper_2_title").blur(updateGrandTotal);
+	$("#paper_3_id").blur(updateGrandTotal);
+	$("#paper_3_title").blur(updateGrandTotal);
+
+	$("#registration_form").submit(function () {
+	    var fields = [];
+	    $(':input.required', '#registration_form').each(function() {
+		if (this.value == "") {
+		fields.push($('label[for="' + this.name + '"]').text());
+		}
+		});
+
+	    if (fields.length) {
+	    alert("The following fields are required:\n\n" + fields.join("\n"));
+	    return false;
+	    }
+
+	    var full_name = $("#last_name").val() + ", " + $("#first_name").val();
+	    var papers = [];
+
+	    for (var i = 1; i <= 3; i++) {
+	    var paper_id = $("#paper_" + i + "_id").val();
+	    if (paper_id != "") {
+	    papers.push(paper_id);
+	    }
+	    }
+
+	    $("#order_desc").val(full_name + "; papers: " + papers.join(", "));
+	    $("#amount").val(computeGrandTotal());
+
+	    return true;
+	});
+});
+</script>
 
 </head>
 <body>
-  <div class="page_margins">
-    <div class="page">
-      <div id="header">
-        <div class="subcolumns">
-          <div class="c25l">
-            <div class="subcl">
-              <img src="images/wims12.png" alt="WIMS'12"/>
-              <div id="tagline">
-                International Conference on Web Intelligence, Mining and Semantics
-              </div>
-              <div id="dateline">
-                June 13-15, 2012<br/>
-                <span style="font-size: 80%">Craiova, Romania</span>
-              </div>
-            </div>
-          </div>
-          <div class="c25l">
-            <div class="subc">
-              <img src="images/craivoa1.png" alt="Muscial fountain from town center"/>
-            </div>
-          </div>
-          <div class="c25l">
-            <div class="subc">
-              <img src="images/craivoa2.png" alt="English park"/>
-            </div>
-          </div>
-          <div class="c25r">
-            <div class="subcr">
-              <img src="images/craivoa3.png" alt="Craiova's Romanescu natural park"/>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="nav">
-        <!-- skiplink anchor: navigation -->
-        <a id="navigation" name="navigation"></a>
-        <div class="hlist">
-          <!-- main navigation: horizontal list -->
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="organization.html">Organisation</a></li>
-            <li><a href="workshops.html">Workshops</a></li>
-            <li><a href="keynote.html">Keynotes</a></li>
-            <li><a href="cfp.html">Call for Papers</a></li>
-            <li><a href="submission.html">Submission</a></li>
-            <li class="active"><strong>Registration</strong></li>
-            <li><a href="#">Program</a></li>
-            <li><a href="important_dates.html">Important Dates</a></li>
-            <li><a href="venue.html">Venue</a></li>
-          </ul>
-        </div>
-      </div>
-      <div id="main">
-        <div id="col1">
-          <div id="col1_content" class="clearfix">
-            <div class="organizer">
-              ORGANISED BY<br/>
-              <a href="http://www.ucv.ro/">
-                University of Craiova,<br/>
-                Romania
-              </a>
-            </div>
-            <div class="organizer_logo">
-              <a href="http://www.ucv.ro/">
-                <img src="images/ucv_logo.png" border="0" alt="University of Craiova"/>
-              </a>
-            </div>
-            <div class="organizer">
-              Proceedings will be part of the International Conference Proceedings Series
-            </div>
-            <div class="organizer_logo">
-              <a href="http://portal.acm.org/citation.cfm?id=1988688&coll=DL&dl=GUIDE&CFID=36670581&CFTOKEN=90504349">
-                <img src="images/acm_logo.jpg" border="0" width="175" height="115" alt="University of Craiova"/>
-              </a>
-            </div>
-            <div class="organizer">
-              Contact info:
-              <p style="font-size: 80%">
-                Software Engineering Department<br/>
-                University of Craiova<br/>
-                Bvd.Decebal 107, 200440, Craiova, Romania<br/>
-                Tel/Fax: +40251438198<br/>
-                E-mail: <a href="mailto:wims12@software.ucv.ro">wims12@software.ucv.ro</a><br/>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div id="col2">
-          <div id="col2_content" class="clearfix">
-            <h1>About</h1>
+    <div class="page_margins">
+	<div class="page">
+	    <div id="header">
+		<div class="subcolumns">
+		    <div class="c25l">
+			<div class="subcl">
+			    <img src="images/wims12.png" alt="WIMS'12"/>
+			    <div id="tagline">
+				International Conference on Web Intelligence, Mining and Semantics
+			    </div>
+			    <div id="dateline">
+				June 13-15, 2012<br/>
+				<span style="font-size: 80%">Craiova, Romania</span>
+			    </div>
+			</div>
+		    </div>
+		    <div class="c25l">
+			<div class="subc">
+			    <img src="images/craivoa1.png" alt="Muscial fountain from town center"/>
+			</div>
+		    </div>
+		    <div class="c25l">
+			<div class="subc">
+			    <img src="images/craivoa2.png" alt="English park"/>
+			</div>
+		    </div>
+		    <div class="c25r">
+			<div class="subcr">
+			    <img src="images/craivoa3.png" alt="Craiova's Romanescu natural park"/>
+			</div>
+		    </div>
+		</div>
+	    </div>
+	    <div id="nav">
+		<!-- skiplink anchor: navigation -->
+		<a id="navigation" name="navigation"></a>
+		<div class="hlist">
+		    <!-- main navigation: horizontal list -->
+		    <ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="organization.html">Organisation</a></li>
+			<li><a href="workshops.html">Workshops</a></li>
+			<li><a href="keynote.html">Keynotes & Tutorials</a></li>
+			<li><a href="cfp.html">Call for Papers</a></li>
+			<li><a href="submission.html">Submission</a></li>
+			<li class="active"><strong>Registration</strong></li>
+			<li><a href="#">Program</a></li>
+			<li><a href="important_dates.html">Important Dates</a></li>
+			<li><a href="venue.html">Venue</a></li>
+		    </ul>
+		</div>
+	    </div>
+	    <div id="main">
+		<div id="col1">
+		    <div id="col1_content" class="clearfix">
+			<div class="organizer">
+			    ORGANISED BY<br/>
+			    <a href="http://www.ucv.ro/">
+				University of Craiova,<br/>
+				Romania
+			    </a>
+			</div>
+			<div class="organizer_logo">
+			    <a href="http://www.ucv.ro/">
+				<img src="images/ucv_logo.png" border="0" alt="University of Craiova"/>
+			    </a>
+			</div>
+			<div class="organizer">
+			    Proceedings will be part of the International Conference Proceedings Series
+			</div>
+			<div class="organizer_logo">
+			    <a href="http://portal.acm.org/citation.cfm?id=1988688&coll=DL&dl=GUIDE&CFID=36670581&CFTOKEN=90504349">
+				<img src="images/acm_logo.jpg" border="0" width="175" height="115" alt="University of Craiova"/>
+			    </a>
+			</div>
+			<div class="organizer">
+			    Contact info:
+			    <p style="font-size: 80%">
+			    Software Engineering Department<br/>
+			    University of Craiova<br/>
+			    Bvd.Decebal 107, 200440, Craiova, Romania<br/>
+			    Tel/Fax: +40251438198<br/>
+			    E-mail: <a href="mailto:wims12@software.ucv.ro">wims12@software.ucv.ro</a><br/>
+			    </p>
+			</div>
+		    </div>
+		</div>
+		<div id="col2">
+		    <div id="col2_content" class="clearfix">
+			<h1>About</h1>
+			<p>
+			The 2nd International Conference on Web Intelligence, Mining and Semantics (WIMS'12) is organised under the auspices of <a href="http://www.ucv.ro/">University of Craiova</a>. The site for the previous edition, <a href="http://wims.vestforsk.no/index.html"><strong>WIMS'11</strong></a>, can be found <a href="http://wims.vestforsk.no/index.html"><strong>here</strong></a>.
+			</p>
+			<p>
+			This is the second in a new series of conferences concerned with intelligent approaches to transform the World Wide Web into a global reasoning and semantics-driven computing machine. Then next conference in this series, WIMS'13 will take place in Madrid (Spain).
+			</p>
+			<h1>Supported by</h1>
+			<div>
+			    <a href="http://www.vestforsk.no/">
+				<img src="images/vf_nor-eng-web.png" alt="vestforsk" border="0" width="100%"/>
+			    </a>
+			</div>
+			<div>
+			    <a href="http://www.planet-data.eu/">
+				<img src="images/PD_logo.gif" alt="vestforsk" border="0" width="100%"/>
+			    </a>
+			</div>
+			<h1>Scientific Patronage of</h1>
+			<div>
+			    <a href="http://www.aria-romania.org/">
+				<img src="images/aria-logo.png" alt="Asociatia Romana de Inteligenta Artificiala" border="0" width="100%"/>
+			    </a>
+			</div>
+			<h1>News</h1>            <h3>Added tutorials</h3>
             <p>
-              The 2nd International Conference on Web Intelligence, Mining and Semantics (WIMS'12) is organised under the auspices of <a href="http://www.ucv.ro/">University of Craiova</a>. The site for the previous edition, <a href="http://wims.vestforsk.no/index.html"><strong>WIMS'11</strong></a>, can be found <a href="http://wims.vestforsk.no/index.html"><strong>here</strong></a>.
+              <strong>20.02.2012</strong>: Check the <a href="keynote.html">keynotes & tutorials section</a> for details.
             </p>
-            <p>
-              This is the second in a new series of conferences concerned with intelligent approaches to transform the World Wide Web into a global reasoning and semantics-driven computing machine. Then next conference in this series, WIMS'13 will take place in Madrid (Spain).
-            </p>
-            <h1>Supported by</h1>
-            <div>
-                <a href="http://www.vestforsk.no/">
-                    <img src="images/vf_nor-eng-web.png" alt="vestforsk" border="0" width="100%"/>
-                </a>
-            </div>
-            <div>
-                <a href="http://www.planet-data.eu/">
-                    <img src="images/PD_logo.gif" alt="vestforsk" border="0" width="100%"/>
-                </a>
-            </div>
-            <h1>Scientific Patronage of</h1>
-            <div>
-                <a href="http://www.aria-romania.org/">
-                    <img src="images/aria-logo.png" alt="Asociatia Romana de Inteligenta Artificiala" border="0" width="100%"/>
-                </a>
-            </div>
-            <h1>News</h1>
-            <h3>Updated registration details</h3>
-            <p>
-              <strong>15.02.2012</strong>: Check the <a href="registration.html">registration section</a> for details.
-            </p>
-            <h3>Added keynote speaker Elena Simperl</h3>
-            <p>
-              <strong>15.02.2012</strong>: Announced keynote session <a href="keynote.html">Crowdsourcing Semantic Data Management: Challenges and Opportunities</a> by Elena Simperl.
-            </p>
-            <h3>Added programme committee for the iCompute workshop</h3>
-            <p>
-              <strong>07.01.2012</strong>: The programme committee for the iCompute workshop can be found <a href="workshops.html">here</a>.
-            </p>
-            <h3>Call for Workshop Papers</h3>
-            <p>
-              <strong>03.01.2012</strong>: Details about the workshop papers can be found on <a href="workshops.html">here</a>.
-            </p>
-            <h3>Added keynote speaker Jeff Z. Pan</h3>
-            <p>
-              <strong>03.01.2012</strong>: Announced keynote session <a href="keynote.html">&#8220;&laquo;Closing&raquo; Some Doors for the Open Semantic Web&#8221;</a> by Jeff Z. Pan.
-            </p>
-            <h3>Industrial track PC members announced</h3>
-            <p>
-              <strong>20.01.2012</strong>: Announced the list of members of the PC for the <a href="cfp-i.html">Industrial track</a>.
-            </p>
-            <h3>Deadlines extended</h3>
-            <p>
-              <strong>11.12.2011</strong>: Deadlines for paper submissions extended.
-            </p>
-            <h3>WIMS'12 site updated</h3>
-            <p>
-              <strong>26.09.2011</strong>: Added call for the Industrial Track; updated PC member list.
-            </p>
-            <hr/>
-            <h3>WIMS'12 site updated</h3>
-            <p>
-              <strong>05.08.2011</strong>: The list of PC and AC members has been updated.
-            </p>
-            <hr/>
-            <h3>WIMS'12 site launched</h3>
-            <p>
-              <strong>20.06.2011</strong>: The WIMS'12 site has been launched. This site will be constantly updated with news and information about the WIMS'12 conference.
-            </p>
-            <hr/>
-          </div>
-        </div>
-        <div id="col3">
-          <div id="col3_content" class="clearfix">
-            <h1>Conference Registration Fees</h1>
-            <p>
-              The WIMS'12 registration fees* are as follows:
-            </p>
-            <div style="width: 100%;">
-              <table border="0" style="margin-left: auto; margin-right: auto;">
-                <tr>
-                  <td>
-                  </td>
-                  <td style="color: #fff; background-color: #4D87C7;">
-                    Regular registration
-                  </td>
-                </tr>
-                <tr>
-                  <td style="color: #fff; background-color: #4D87C7;">
-                    Industry/Business
-                  </td>
-                  <td>
-                    450 Euro
-                  </td>
-                </tr>
-                <tr>
-                  <td style="color: #fff; background-color: #4D87C7;">
-                    Academic
-                  </td>
-                  <td>
-                    400 Euro
-                  </rd>
-                </tr>
-                <tr>
-                  <td style="color: #fff; background-color: #4D87C7;">
-                    Student
-                  </td>
-                  <td>
-                    350 Euro
-                  </td>
-                </tr>
-              </table>
-              *Money Transfers should be in Euro.
-            </div>
-<br/>
-<p>The <strong>registration fee</strong> includes:</p>
-<ul>
-<li>admission to all sessions</li>
-<li>coffee breaks</li>
-<li>lunches, welcome reception on the 13th of June, conference banquet on the 14th of June</li>
-<li>a copy of the proceedings</li>
-<li>one day excursion and social event on the 15th of June</li>
-</ul>
 
-<p>Students have to send a proof within 3 days after registration to <a href="mailto:wims12@software.ucv.ro">wims12@software.ucv.ro</a> or by fax to <strong>+40 251 438198</strong>.</p>
+			<h3>Updated registration details</h3>
+			<p>
+			<strong>15.02.2012</strong>: Check the <a href="registration.html">registration section</a> for details.
+			</p>
+			<h3>Added keynote speaker Elena Simperl</h3>
+			<p>
+			<strong>15.02.2012</strong>: Announced keynote session <a href="keynote.html">Crowdsourcing Semantic Data Management: Challenges and Opportunities</a> by Elena Simperl.
+			</p>
+			<h3>Added programme committee for the iCompute workshop</h3>
+			<p>
+			<strong>07.01.2012</strong>: The programme committee for the iCompute workshop can be found <a href="workshops.html">here</a>.
+			</p>
+			<h3>Call for Workshop Papers</h3>
+			<p>
+			<strong>03.01.2012</strong>: Details about the workshop papers can be found on <a href="workshops.html">here</a>.
+			</p>
+			<h3>Added keynote speaker Jeff Z. Pan</h3>
+			<p>
+			<strong>03.01.2012</strong>: Announced keynote session <a href="keynote.html">&#8220;&laquo;Closing&raquo; Some Doors for the Open Semantic Web&#8221;</a> by Jeff Z. Pan.
+			</p>
+			<h3>Industrial track PC members announced</h3>
+			<p>
+			<strong>20.01.2012</strong>: Announced the list of members of the PC for the <a href="cfp-i.html">Industrial track</a>.
+			</p>
+			<h3>Deadlines extended</h3>
+			<p>
+			<strong>11.12.2011</strong>: Deadlines for paper submissions extended.
+			</p>
+			<h3>WIMS'12 site updated</h3>
+			<p>
+			<strong>26.09.2011</strong>: Added call for the Industrial Track; updated PC member list.
+			</p>
+			<hr/>
+			<h3>WIMS'12 site updated</h3>
+			<p>
+			<strong>05.08.2011</strong>: The list of PC and AC members has been updated.
+			</p>
+			<hr/>
+			<h3>WIMS'12 site launched</h3>
+			<p>
+			<strong>20.06.2011</strong>: The WIMS'12 site has been launched. This site will be constantly updated with news and information about the WIMS'12 conference.
+			</p>
+			<hr/>
+		    </div>
+		</div>
+		<div id="col3">
+		    <div id="col3_content" class="clearfix">
+			<h1>Conference Registration Fees</h1>
+			<p>
+			The WIMS'12 registration fees* are as follows:
+			</p>
+			<div style="width: 100%;">
+			    <table border="0" style="margin-left: auto; margin-right: auto;">
+				<tr>
+				    <td>
+				    </td>
+				    <td style="color: #fff; background-color: #4D87C7;">
+					Regular registration
+				    </td>
+				</tr>
+				<tr>
+				    <td style="color: #fff; background-color: #4D87C7;">
+					Industry/Business
+				    </td>
+				    <td>
+					450 Euro
+				    </td>
+				</tr>
+				<tr>
+				    <td style="color: #fff; background-color: #4D87C7;">
+					Academic
+				    </td>
+				    <td>
+					400 Euro
+					</rd>
+				    </tr>
+				    <tr>
+					<td style="color: #fff; background-color: #4D87C7;">
+					    Student
+					</td>
+					<td>
+					    350 Euro
+					</td>
+				    </tr>
+				</table>
+				*Money Transfers should be in Euro.
+			    </div>
+			    <br/>
+			    <p>The <strong>registration fee</strong> includes:</p>
+			    <ul>
+				<li>admission to all sessions</li>
+				<li>coffee breaks</li>
+				<li>lunches, welcome reception on the 13th of June, conference banquet on the 14th of June</li>
+				<li>a copy of the proceedings</li>
+				<li>one day excursion and social event on the 15th of June</li>
+			    </ul>
 
-<p>One registration fee will cover presentation and publication of only one paper. Each additional presented paper associated with the same registration will be subject to an additional fee of 200 Euro respectively.</p>
+			    <p>Students have to send a proof within 3 days after registration to <a href="mailto:wims12@software.ucv.ro">wims12@software.ucv.ro</a> or by fax to <strong>+40 251 438198</strong>.</p>
 
-<p><strong style="color: red;">For each paper at least one author must register and pay the registration fee, not later than April 2, 2012.</strong></p>
+			    <p>One registration fee will cover presentation and publication of only one paper. Each additional presented paper associated with the same registration will be subject to an additional fee of 200 Euro respectively.</p>
 
-<p>The participation of an accompanying person requires an additional fee of 200 Euro respectively.</p>
+			    <p><strong style="color: red;">For each paper at least one author must register and pay the registration fee, not later than April 2, 2012.</strong></p>
 
-<p>Please address your enquiries about visa requirements to <a href="mailto:wims12@software.ucv.ro">wims12@software.ucv.ro</a>.</p>
+			    <p>The participation of an accompanying person requires an additional fee of 200 Euro respectively.</p>
 
-<h1>Registration and Payment</h1>
+			    <p>Please address your enquiries about visa requirements to <a href="mailto:wims12@software.ucv.ro">wims12@software.ucv.ro</a>.</p>
 
-<h3>Online Registration and Payment</h3>
-<form action="#" method="post" accept-charset="utf-8">
-    <h4>Personal Information</h4>
-    <p>
-        <label for="title">Title</label>
-        <select name="title" id="title">
-            <option value="mr">Mr.</option>
-            <option value="mrs">Mrs.</option>
-            <option value="dr">Dr.</option>
-            <option value="prof">Prof.</option>
-        </select>
-    </p>
-    <p>
-        <label for="first_name">First Name</label>
-        <input type="text" name="first_name" value="" id="first_name"/>
-    </p>
-    <p>
-        <label for="last_name">Last Name</label>
-        <input type="text" name="last_name" value="" id="last_name"/>
-    </p>
-    <p>
-        <label for="affiliation">Affiliation</label>
-        <input type="text" name="affiliation" value="" id="affiliation"/>
-    </p>
-    <p>
-        <label for="address">Address</label>
-        <input type="text/submit/hidden/button" name="address" value="" id="address"/>
-    </p>
-    <p>
-        <label for="city">City</label>
-        <input type="text" name="city" value="" id="city"/>
-    </p>
-    <p>
-        <label for="zip_code">Zip Code</label>
-        <input type="text/submit/hidden/button" name="zip_code" value="" id="zip_code"/>
-    </p>
-    <p>
-        <label for="country">Country</label>
-        <input type="text" name="country" value="" id="country"/>
-    </p>
-    <p>
-        <label for="telephone">Telephone/Fax</label>
-        <input type="text" name="telephone" value="" id="telephone"/>
-    </p>
-    <p>
-        <label for="email">Email</label>
-        <input type="text" name="email" value="" id="email"/>
-    </p>
-    <h4>Paper Information</h4>
-    <p>For the first paper the participant must pay the full registration fee. For each additional paper he or she must pay 200 EUR.</p>
-    <p>
-        <label for="paper_1_id">Paper 1 ID</label>
-        <input type="text" name="paper_1_id" value="" id="paper_1_id"/>
-    </p>
-    <p>
-        <label for="paper_1_title">Paper 1 Title</label>
-        <input type="text" name="paper_1_title" value="" id="paper_1_title"/>
-    </p>
-    <p>
-        <label for="paper_2_id">Paper 2 ID</label>
-        <input type="text" name="paper_2_id" value="" id="paper_2_id"/>
-    </p>
-    <p>
-        <label for="paper_2_title">Paper 2 Title</label>
-        <input type="text" name="paper_2_title" value="" id="paper_2_title"/>
-    </p>
-    <p>
-        <label for="paper_3_id">Paper 3 ID</label>
-        <input type="text" name="paper_3_id" value="" id="paper_3_id"/>
-    </p>
-    <p>
-        <label for="paper_3_title">Paper 3 Title</label>
-        <input type="text" name="paper_3_title" value="" id="paper_3_title"/>
-    </p>
-    <p><input type="submit" value="Continue &rarr;"></p>
-</form>
-<h3>Offline Registration and Payment</h3>
-<p>
-    Please fill-in, sign and fax <a href="/Wims12/offline-registration_form.doc">this</a> registration form to:<br/>
-    Costin Badica<br/>
-    University of Craiova<br/>
-    Faculty of Automation, Computers and Electronics<br/>
-    Bvd. Decebal, Nr.107, 200440, Craiova, Romania<br/>
-    Fax: +40251438198<br/>
-</p>
-<p>Alternatively you can send a scanned copy by email to: <a href="mailto:wims12@software.ucv.ro">wims12@software.ucv.ro</a> (with <a href="mailto:cbadica@software.ucv.ro">cbadica@software.ucv.ro</a> in CC).</p>
- 
-<p>Also, for each payment by bank transfer please send a scanned copy of the bank swift message to <a href="mailto:wims12@software.ucv.ro">wims12@software.ucv.ro</a> (with <a href="mailto:cbadica@software.ucv.ro">cbadica@software.ucv.ro</a> in CC).</p>
+			    <h1>Registration and Payment</h1>
 
-<h3>Cancellation Policy for the Registration</h3>
-<p>Author registrations cannot be returned after April 2, 2012.
-All other refund requests must be in writing and received before March 31, 2012.
-A 100 Euro cancellation fee will be deducted from the registration fees.
-Substitution of one conference attendee for another will be accepted at any time, on the
-basis of information of the change via email (<a href="mailto:wims12@software.ucv.ro">wims12@software.ucv.ro</a> with a carbon
-copy to <a href="mailto:cbadica@software.ucv.ro">cbadica@software.ucv.ro</a>). The submission to both addresses is requested.
-</p>          </div>
-          <!-- IE Column Clearing -->
-          <div id="ie_clearing"> &#160; </div>
-        </div>
-      </div>
-      <!-- begin: #footer -->
-      <div id="footer">Layout based on <a href="http://www.yaml.de/">YAML</a>
-      </div>
-    </div>
-  </div>
-<script type="text/javascript">
+			    <h3>Online Registration and Payment</h3>
+			    <form action="/Wims12/confirm_registration.php" method="post" id="registration_form" accept-charset="utf-8">
+				<h4>Personal Information</h4>
+				<p>
+				<label for="registration_type">Registration type</label>
+				<select id="registration_type">
+				    <option value="0.3">Industrial</option>
+				    <option value="0.2">Academic</option>
+				    <option value="0.1">Student</option>
+				</select>
+				</p>
+				<p>
+				<label for="title">Title</label>
+				<select name="title" id="title">
+				    <option value="mr">Mr.</option>
+				    <option value="mrs">Mrs.</option>
+				    <option value="dr">Dr.</option>
+				    <option value="prof">Prof.</option>
+				</select>
+				</p>
+				<p>
+				<label for="first_name">First Name</label>
+				<input type="text" name="first_name" value="" id="first_name" class="required"/>
+				</p>
+				<p>
+				<label for="last_name">Last Name</label>
+				<input type="text" name="last_name" value="" id="last_name" class="required"/>
+				</p>
+				<p>
+				<label for="affiliation">Affiliation</label>
+				<input type="text" name="affiliation" value="" id="affiliation" class="required"/>
+				</p>
+				<p>
+				<label for="address">Address</label>
+				<input type="text" name="address" value="" id="address" class="required"/>
+				</p>
+				<p>
+				<label for="city">City</label>
+				<input type="text" name="city" value="" id="city" class="required"/>
+				</p>
+				<p>
+				<label for="zip_code">Zip Code</label>
+				<input type="text" name="zip_code" value="" id="zip_code" class="required"/>
+				</p>
+				<p>
+				<label for="country">Country</label>
+				<select class="" id="country" name="country" class="required">
+				    <option value="">Select One</option><option value="af">Afghanistan</option><option value="ax">Aland Islands</option><option value="al">Albania</option><option value="dz">Algeria</option><option value="as">American Samoa</option><option value="ad">Andorra</option><option value="ao">Angola</option><option value="ai">Anguilla</option><option value="aq">Antarctica</option><option value="ag">Antigua and Barbuda</option><option value="ar">Argentina</option><option value="am">Armenia</option><option value="aw">Aruba</option><option value="au">Australia</option><option value="at">Austria</option><option value="az">Azerbaijan</option><option value="bs">Bahamas</option><option value="bh">Bahrain</option><option value="bd">Bangladesh</option><option value="bb">Barbados</option><option value="by">Belarus</option><option value="be">Belgium</option><option value="bz">Belize</option><option value="bj">Benin</option><option value="bm">Bermuda</option><option value="bt">Bhutan</option><option value="bo">Bolivia</option><option value="ba">Bosnia and Herzegovina</option><option value="bw">Botswana</option><option value="bv">Bouvet Island</option><option value="br">Brazil</option><option value="io">British Indian Ocean Territory</option><option value="vg">British Virgin Islands</option><option value="bn">Brunei</option><option value="bg">Bulgaria</option><option value="bf">Burkina Faso</option><option value="bi">Burundi</option><option value="kh">Cambodia</option><option value="cm">Cameroon</option><option value="ca">Canada</option><option value="cv">Cape Verde</option><option value="ky">Cayman Islands</option><option value="cf">Central African Republic</option><option value="td">Chad</option><option value="cl">Chile</option><option value="cn">China</option><option value="cx">Christmas Island</option><option value="cc">Cocos (Keeling) Islands</option><option value="co">Colombia</option><option value="km">Comoros</option><option value="cg">Congo</option><option value="ck">Cook Islands</option><option value="cr">Costa Rica</option><option value="hr">Croatia</option><option value="cu">Cuba</option><option value="cy">Cyprus</option><option value="cz">Czech Republic</option><option value="cd">Democratic Republic of Congo</option><option value="dk">Denmark</option><option value="xx">Disputed Territory</option><option value="dj">Djibouti</option><option value="dm">Dominica</option><option value="do">Dominican Republic</option><option value="tl">East Timor</option><option value="ec">Ecuador</option><option value="eg">Egypt</option><option value="sv">El Salvador</option><option value="gq">Equatorial Guinea</option><option value="er">Eritrea</option><option value="ee">Estonia</option><option value="et">Ethiopia</option><option value="fk">Falkland Islands</option><option value="fo">Faroe Islands</option><option value="fm">Federated States of Micronesia</option><option value="fj">Fiji</option><option value="fi">Finland</option><option value="fr">France</option><option value="gf">French Guyana</option><option value="pf">French Polynesia</option><option value="tf">French Southern Territories</option><option value="ga">Gabon</option><option value="gm">Gambia</option><option value="ge">Georgia</option><option value="de">Germany</option><option value="gh">Ghana</option><option value="gi">Gibraltar</option><option value="gr">Greece</option><option value="gl">Greenland</option><option value="gd">Grenada</option><option value="gp">Guadeloupe</option><option value="gu">Guam</option><option value="gt">Guatemala</option><option value="gn">Guinea</option><option value="gw">Guinea-Bissau</option><option value="gy">Guyana</option><option value="ht">Haiti</option><option value="hm">Heard Island and Mcdonald Islands</option><option value="hn">Honduras</option><option value="hk">Hong Kong</option><option value="hu">Hungary</option><option value="is">Iceland</option><option value="in">India</option><option value="id">Indonesia</option><option value="ir">Iran</option><option value="iq">Iraq</option><option value="xe">Iraq-Saudi Arabia Neutral Zone</option><option value="ie">Ireland</option><option value="il">Israel</option><option value="it">Italy</option><option value="ci">Ivory Coast</option><option value="jm">Jamaica</option><option value="jp">Japan</option><option value="jo">Jordan</option><option value="kz">Kazakhstan</option><option value="ke">Kenya</option><option value="ki">Kiribati</option><option value="kw">Kuwait</option><option value="kg">Kyrgyzstan</option><option value="la">Laos</option><option value="lv">Latvia</option><option value="lb">Lebanon</option><option value="ls">Lesotho</option><option value="lr">Liberia</option><option value="ly">Libya</option><option value="li">Liechtenstein</option><option value="lt">Lithuania</option><option value="lu">Luxembourg</option><option value="mo">Macau</option><option value="mk">Macedonia</option><option value="mg">Madagascar</option><option value="mw">Malawi</option><option value="my">Malaysia</option><option value="mv">Maldives</option><option value="ml">Mali</option><option value="mt">Malta</option><option value="mh">Marshall Islands</option><option value="mq">Martinique</option><option value="mr">Mauritania</option><option value="mu">Mauritius</option><option value="yt">Mayotte</option><option value="mx">Mexico</option><option value="md">Moldova</option><option value="mc">Monaco</option><option value="mn">Mongolia</option><option value="me">Montenegro</option><option value="ms">Montserrat</option><option value="ma">Morocco</option><option value="mz">Mozambique</option><option value="mm">Myanmar</option><option value="na">Namibia</option><option value="nr">Nauru</option><option value="np">Nepal</option><option value="an">Netherlands Antilles</option><option value="nl">Netherlands</option><option value="nc">New Caledonia</option><option value="nz">New Zealand</option><option value="ni">Nicaragua</option><option value="ne">Niger</option><option value="ng">Nigeria</option><option value="nu">Niue</option><option value="nf">Norfolk Island</option><option value="kp">North Korea</option><option value="mp">Northern Mariana Islands</option><option value="no">Norway</option><option value="om">Oman</option><option value="pk">Pakistan</option><option value="pw">Palau</option><option value="ps">Palestinian Territories</option><option value="pa">Panama</option><option value="pg">Papua New Guinea</option><option value="py">Paraguay</option><option value="pe">Peru</option><option value="ph">Philippines</option><option value="pn">Pitcairn Islands</option><option value="pl">Poland</option><option value="pt">Portugal</option><option value="pr">Puerto Rico</option><option value="qa">Qatar</option><option value="re">Reunion</option><option value="ro">Romania</option><option value="ru">Russia</option><option value="rw">Rwanda</option><option value="sh">Saint Helena and Dependencies</option><option value="kn">Saint Kitts and Nevis</option><option value="lc">Saint Lucia</option><option value="pm">Saint Pierre and Miquelon</option><option value="vc">Saint Vincent and the Grenadines</option><option value="ws">Samoa</option><option value="sm">San Marino</option><option value="st">Sao Tome and Principe</option><option value="sa">Saudi Arabia</option><option value="sn">Senegal</option><option value="rs">Serbia</option><option value="sc">Seychelles</option><option value="sl">Sierra Leone</option><option value="sg">Singapore</option><option value="sk">Slovakia</option><option value="si">Slovenia</option><option value="sb">Solomon Islands</option><option value="so">Somalia</option><option value="za">South Africa</option><option value="gs">South Georgia and South Sandwich Islands</option><option value="kr">South Korea</option><option value="es">Spain</option><option value="pi">Spratly Islands</option><option value="lk">Sri Lanka</option><option value="sd">Sudan</option><option value="sr">Suriname</option><option value="sj">Svalbard and Jan Mayen</option><option value="sz">Swaziland</option><option value="se">Sweden</option><option value="ch">Switzerland</option><option value="sy">Syria</option><option value="tw">Taiwan</option><option value="tj">Tajikistan</option><option value="tz">Tanzania</option><option value="th">Thailand</option><option value="tg">Togo</option><option value="tk">Tokelau</option><option value="to">Tonga</option><option value="tt">Trinidad and Tobago</option><option value="tn">Tunisia</option><option value="tr">Turkey</option><option value="tm">Turkmenistan</option><option value="tc">Turks And Caicos Islands</option><option value="tv">Tuvalu</option><option value="vi">US Virgin Islands</option><option value="ug">Uganda</option><option value="ua">Ukraine</option><option value="ae">United Arab Emirates</option><option value="uk">United Kingdom</option><option value="um">United States Minor Outlying Islands</option><option value="us">United States</option><option value="uy">Uruguay</option><option value="uz">Uzbekistan</option><option value="vu">Vanuatu</option><option value="va">Vatican City</option><option value="ve">Venezuela</option><option value="vn">Vietnam</option><option value="wf">Wallis and Futuna</option><option value="eh">Western Sahara</option><option value="ye">Yemen</option><option value="zm">Zambia</option><option value="zw">Zimbabwe</option>
+				</select>
+				</p>
+				<p>
+				<label for="telephone">Telephone/Fax</label>
+				<input type="text" name="telephone" value="" id="telephone" class="required"/>
+				</p>
+				<p>
+				<label for="email">Email</label>
+				<input type="text" name="email" value="" id="email" class="required"/>
+				</p>
+				<h4>Paper Information</h4>
+				<p>For the first paper the participant must pay the full registration fee. For each additional paper he or she must pay 200 EUR.</p>
+				<p>
+				<label for="paper_1_id">Paper 1 ID</label>
+				<input type="text" name="paper_1_id" value="" id="paper_1_id" class="paper"/>
+				</p>
+				<p>
+				<label for="paper_1_title">Paper 1 Title</label>
+				<input type="text" name="paper_1_title" value="" id="paper_1_title" class="paper"/>
+				</p>
+				<p>
+				<label for="paper_2_id">Paper 2 ID</label>
+				<input type="text" name="paper_2_id" value="" id="paper_2_id" class="paper"/>
+				</p>
+				<p>
+				<label for="paper_2_title">Paper 2 Title</label>
+				<input type="text" name="paper_2_title" value="" id="paper_2_title" class="paper"/>
+				</p>
+				<p>
+				<label for="paper_3_id">Paper 3 ID</label>
+				<input type="text" name="paper_3_id" value="" id="paper_3_id" class="paper"/>
+				</p>
+				<p>
+				<label for="paper_3_title">Paper 3 Title</label>
+				<input type="text" name="paper_3_title" value="" id="paper_3_title" class="paper"/>
+				</p>
+				<p>
+				<strong style="font-size: 120%;">Total amount: </strong><strong style="font-size: 120%;" id="grand_total">0 EUR</strong>
+				</p>
+				<input type="hidden" name="amount" value="" id="amount"/>
+				<input type="hidden" name="curr" value="EUR" id="curr"/>
+				<input type="hidden" name="order_desc" value="" id="order_desc"/>
+				<p><input type="submit" value="Continue &rarr;"></p>
+			    </form>
+			    <h3>Offline Registration and Payment</h3>
+			    <p>
+			    Please fill-in, sign and fax <a href="/Wims12/offline-registration_form.doc">this</a> registration form to:<br/>
+			    Costin Badica<br/>
+			    University of Craiova<br/>
+			    Faculty of Automation, Computers and Electronics<br/>
+			    Bvd. Decebal, Nr.107, 200440, Craiova, Romania<br/>
+			    Fax: +40251438198<br/>
+			    </p>
+			    <p>Alternatively you can send a scanned copy by email to: <a href="mailto:wims12@software.ucv.ro">wims12@software.ucv.ro</a> (with <a href="mailto:cbadica@software.ucv.ro">cbadica@software.ucv.ro</a> in CC).</p>
 
- var _gaq = _gaq || [];
- _gaq.push(['_setAccount', 'UA-25287199-1']);
- _gaq.push(['_trackPageview']);
+			    <p>Also, for each payment by bank transfer please send a scanned copy of the bank swift message to <a href="mailto:wims12@software.ucv.ro">wims12@software.ucv.ro</a> (with <a href="mailto:cbadica@software.ucv.ro">cbadica@software.ucv.ro</a> in CC).</p>
 
- (function() {
-  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
- })();
+			    <h3>Cancellation Policy for the Registration</h3>
+			    <p>Author registrations cannot be returned after April 2, 2012.
+			    All other refund requests must be in writing and received before March 31, 2012.
+			    A 100 Euro cancellation fee will be deducted from the registration fees.
+			    Substitution of one conference attendee for another will be accepted at any time, on the
+			    basis of information of the change via email (<a href="mailto:wims12@software.ucv.ro">wims12@software.ucv.ro</a> with a carbon
+			    copy to <a href="mailto:cbadica@software.ucv.ro">cbadica@software.ucv.ro</a>). The submission to both addresses is requested.
+			    </p>          </div>
+			    <!-- IE Column Clearing -->
+			    <div id="ie_clearing"> &#160; </div>
+			</div>
+		    </div>
+		    <!-- begin: #footer -->
+		    <div id="footer">Layout based on <a href="http://www.yaml.de/">YAML</a>
+		    </div>
+		</div>
+	    </div>
+	    <script type="text/javascript">
+
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-25287199-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+		 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		 })();
 
 </script>
-</body>
-</html>
+		 </body>
+	     </html>
