@@ -6,9 +6,20 @@
 <!-- add your meta tags here -->
 
 <link href="css/my_layout.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" media="all" />
+<link rel="stylesheet" href="http://static.jquery.com/ui/css/demo-docs-theme/ui.theme.css" type="text/css" media="all" />
+
 <!--[if lte IE 7]>
 <link href="css/patch_my_layout.css" rel="stylesheet" type="text/css" />
 <![endif]-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+    $(function () {
+        $("#accordion").accordion({ active: false, collapsible: true });
+    });
+</script>
 </head>
 <body>
   <div class="page_margins">
@@ -59,7 +70,7 @@
             <li><a href="registration.html">Registration</a></li>
             <li><a href="not_available.html">Program</a></li>
             <li><a href="important_dates.html">Important Dates</a></li>
-            <li  class="active"><strong>Venue</strong></li>
+            <li  class="active"><strong>Venue & Accommodation</strong></li>
           </ul>
         </div>
       </div>
@@ -124,7 +135,15 @@
                     <img src="images/aria-logo.png" alt="Asociatia Romana de Inteligenta Artificiala" border="0" width="100%"/>
                 </a>
             </div>
-            <h1>News</h1>            <h3>Added tutorials</h3>
+                        <h1>News</h1><h3>Extended deadlines for industrial track</h3>
+            <p>
+              <strong>05.01.2012</strong>: Check the <a href="cfp-i.html">the industrial track</a> section for details.
+            </p>
+            <h3>Added accommodation information</h3>
+            <p>
+              <strong>23.02.2012</strong>: Check the <a href="venue.html">venue & accommodation section</a> for details.
+            </p>
+            <h3>Added tutorials</h3>
             <p>
               <strong>20.02.2012</strong>: Check the <a href="keynote.html">keynotes & tutorials section</a> for details.
             </p>
@@ -180,15 +199,45 @@
             <p>
                 The WIMS'12 conference will be hosted by the <a href="http://www.ucv.ro/">University of Craiova</a>.
             </p>
-
-            <h2>Accomodation details</h2>
-            <p>TBA</p>
-            
+            <h2>Accommodation details</h2>
+            <p>
+                <ul>
+                    <div id="accordion">
+                        <h3><a href="#">Hotel Golden House</a></h3>
+                          <div>
+                              <a href="http://www.goldenhouse.ro/">Go to the hotel's website</a>
+                              <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=d&amp;source=s_d&amp;saddr=Hotel+Golden+House,+Craiova,+Dolj,+Rom%C3%A2nia&amp;daddr=University+of+Craiova,+Bulevardul+Alexandru+Ioan+Cuza,+Craiova,+Romania&amp;hl=en&amp;geocode=FYJKpAIdOvdqASk1a0hNnddSRzFVd16VUsWNPA%3BFUJBpAIdSitrASlR5rEHoNdSRzFRR3a95wGUzA&amp;aq=1&amp;oq=Hotel+Golden+&amp;sll=44.326688,23.803296&amp;sspn=0.007967,0.01929&amp;dirflg=w&amp;mra=ls&amp;ie=UTF8&amp;t=h&amp;ll=44.319304,23.793683&amp;spn=0.010746,0.018239&amp;z=15&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/maps?f=d&amp;source=embed&amp;saddr=Hotel+Golden+House,+Craiova,+Dolj,+Rom%C3%A2nia&amp;daddr=University+of+Craiova,+Bulevardul+Alexandru+Ioan+Cuza,+Craiova,+Romania&amp;hl=en&amp;geocode=FYJKpAIdOvdqASk1a0hNnddSRzFVd16VUsWNPA%3BFUJBpAIdSitrASlR5rEHoNdSRzFRR3a95wGUzA&amp;aq=1&amp;oq=Hotel+Golden+&amp;sll=44.326688,23.803296&amp;sspn=0.007967,0.01929&amp;dirflg=w&amp;mra=ls&amp;ie=UTF8&amp;t=h&amp;ll=44.319304,23.793683&amp;spn=0.010746,0.018239&amp;z=15" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+                          </div>
+                          <h3><a href="#">Hotel Europeca</a></h3>
+                          <div>
+                            <a href="http://www.hoteleuropeca.ro/en/">Go to the hotel's web site</a><br/>
+                            <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=d&amp;source=s_d&amp;saddr=Hotel+Europeca,+Strada+Paltinis,+Craiova,+Rom%C3%A2nia+(europeca+craiova+hotel)&amp;daddr=University+of+Craiova,+Bulevardul+Alexandru+Ioan+Cuza,+Craiova,+Romania&amp;hl=en&amp;geocode=FQdapAIdnDZrASFtMvOigf15xQ%3BFUJBpAIdSitrASlR5rEHoNdSRzFRR3a95wGUzA&amp;aq=1&amp;oq=Hotel+europe&amp;sll=44.320655,23.79334&amp;sspn=0.015935,0.038581&amp;dirflg=w&amp;mra=ls&amp;ie=UTF8&amp;t=h&amp;ll=44.322129,23.805184&amp;spn=0.010746,0.018239&amp;z=15&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/maps?f=d&amp;source=embed&amp;saddr=Hotel+Europeca,+Strada+Paltinis,+Craiova,+Rom%C3%A2nia+(europeca+craiova+hotel)&amp;daddr=University+of+Craiova,+Bulevardul+Alexandru+Ioan+Cuza,+Craiova,+Romania&amp;hl=en&amp;geocode=FQdapAIdnDZrASFtMvOigf15xQ%3BFUJBpAIdSitrASlR5rEHoNdSRzFRR3a95wGUzA&amp;aq=1&amp;oq=Hotel+europe&amp;sll=44.320655,23.79334&amp;sspn=0.015935,0.038581&amp;dirflg=w&amp;mra=ls&amp;ie=UTF8&amp;t=h&amp;ll=44.322129,23.805184&amp;spn=0.010746,0.018239&amp;z=15" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+                          </div>
+                          <h3><a href="#">Hotel Bavaria</a></h3>
+                          <div>
+                            <a href="http://www.hotel-bavaria.ro/">Go to the hotel's web site</a><br/>
+                            <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=d&amp;source=s_d&amp;saddr=Hotel+Bavaria,+Craiova,+Dolj,+Romania&amp;daddr=University+of+Craiova,+Bulevardul+Alexandru+Ioan+Cuza,+Craiova,+Romania&amp;hl=en&amp;geocode=FVwkpAIdrjFrASHGPk6V9Iv57Q%3BFUJBpAIdSitrASlR5rEHoNdSRzFRR3a95wGUzA&amp;aq=0&amp;oq=Hotel+Bavaria&amp;sll=44.3219,23.8024&amp;sspn=0.007967,0.01929&amp;dirflg=w&amp;mra=ls&amp;ie=UTF8&amp;t=h&amp;ll=44.31565,23.802524&amp;spn=0.010747,0.018239&amp;z=15&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/maps?f=d&amp;source=embed&amp;saddr=Hotel+Bavaria,+Craiova,+Dolj,+Romania&amp;daddr=University+of+Craiova,+Bulevardul+Alexandru+Ioan+Cuza,+Craiova,+Romania&amp;hl=en&amp;geocode=FVwkpAIdrjFrASHGPk6V9Iv57Q%3BFUJBpAIdSitrASlR5rEHoNdSRzFRR3a95wGUzA&amp;aq=0&amp;oq=Hotel+Bavaria&amp;sll=44.3219,23.8024&amp;sspn=0.007967,0.01929&amp;dirflg=w&amp;mra=ls&amp;ie=UTF8&amp;t=h&amp;ll=44.31565,23.802524&amp;spn=0.010747,0.018239&amp;z=15" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+                          </div>
+                          <h3><a href="#">Hotel Casa cu tei</a></h3>
+                          <div>
+                            <a href="http://www.casacutei.com/en">Go to the hotel's web site</a><br/>
+                            <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=d&amp;source=s_d&amp;saddr=Hotel+Casa+cu+Tei+Craiova&amp;daddr=University+of+Craiova,+Bulevardul+Alexandru+Ioan+Cuza,+Craiova,+Romania&amp;hl=en&amp;geocode=FSFbpAId1QprASGZlLZq1nvTDQ%3BFUJBpAIdSitrASlR5rEHoNdSRzFRR3a95wGUzA&amp;aq=&amp;sll=44.315021,23.801258&amp;sspn=0.007968,0.01929&amp;dirflg=w&amp;mra=ls&amp;ie=UTF8&amp;t=h&amp;ll=44.322098,23.798532&amp;spn=0.010746,0.018239&amp;z=15&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/maps?f=d&amp;source=embed&amp;saddr=Hotel+Casa+cu+Tei+Craiova&amp;daddr=University+of+Craiova,+Bulevardul+Alexandru+Ioan+Cuza,+Craiova,+Romania&amp;hl=en&amp;geocode=FSFbpAId1QprASGZlLZq1nvTDQ%3BFUJBpAIdSitrASlR5rEHoNdSRzFRR3a95wGUzA&amp;aq=&amp;sll=44.315021,23.801258&amp;sspn=0.007968,0.01929&amp;dirflg=w&amp;mra=ls&amp;ie=UTF8&amp;t=h&amp;ll=44.322098,23.798532&amp;spn=0.010746,0.018239&amp;z=15" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+                          </div>
+                          <h3><a href="#">Hotel Plaza</a></h3>
+                          <div>
+                            <a href="http://en.hotelplaza.ro/">Go to the hotel's web site</a><br/>
+                            <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=d&amp;source=s_d&amp;saddr=Hotel+Plaza+Craiova,+Craiova,+Dolj,+Romania&amp;daddr=University+of+Craiova,+Bulevardul+Alexandru+Ioan+Cuza,+Craiova,+Romania&amp;hl=en&amp;geocode=FWwvpAId0y5rASHFvz5nlIVpSw%3BFUJBpAIdSitrASlR5rEHoNdSRzFRR3a95wGUzA&amp;aq=0&amp;oq=Hotel+Plaza&amp;sll=44.323388,23.796837&amp;sspn=0.007967,0.01929&amp;dirflg=w&amp;mra=ls&amp;ie=UTF8&amp;t=h&amp;ll=44.316571,23.803017&amp;spn=0.005373,0.00912&amp;z=16&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/maps?f=d&amp;source=embed&amp;saddr=Hotel+Plaza+Craiova,+Craiova,+Dolj,+Romania&amp;daddr=University+of+Craiova,+Bulevardul+Alexandru+Ioan+Cuza,+Craiova,+Romania&amp;hl=en&amp;geocode=FWwvpAId0y5rASHFvz5nlIVpSw%3BFUJBpAIdSitrASlR5rEHoNdSRzFRR3a95wGUzA&amp;aq=0&amp;oq=Hotel+Plaza&amp;sll=44.323388,23.796837&amp;sspn=0.007967,0.01929&amp;dirflg=w&amp;mra=ls&amp;ie=UTF8&amp;t=h&amp;ll=44.316571,23.803017&amp;spn=0.005373,0.00912&amp;z=16" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+                          </div>
+                    </div>
+                </ul>
+            </p>
+            <p>Note that you can find some of the hotels on booking.com. For the others it is advisable to make the reservation by phone.</p>
             <p>
                 <a href="http://en.wikipedia.org/wiki/Craiova">Craiova</a> is the capital of the <a href="http://en.wikipedia.org/wiki/Oltenia"><em>Oltenia</em></a> region. 
-                A few facts about the history of Craiova can be found <a href="http://memorielocala.aman.ro/index_eng.html">here</a>.</p>
-            <h2>Hotel</h2>
-            <p>The name of the hotel hosting the WIMS'12 conference will be announced soon.</p>
+                A few facts about the history of Craiova can be found <a href="http://memorielocala.aman.ro/index_eng.html">here</a>.
+            </p>
+            <!-- <h2>Hotel</h2>
+            <p>The name of the hotel hosting the WIMS'12 conference will be announced soon.</p> -->
             
             <h2>Traveling to Craiova</h2>
             There are three options of getting to Craiova:

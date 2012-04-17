@@ -121,6 +121,13 @@ $dataAll['fp_hash'] = strtoupper(euplatesc_mac($dataAll,$key));
     $(function () {
         $("#title").val("<?php echo $_POST['title']; ?>");
         $("#country").val("<?php echo $_POST['country']; ?>");
+        $("#gateway").submit(function () {
+            $(this).children().each(function () {
+                var child = $(this);
+                alert(child.attr("name"));
+            });
+            return false;
+        });
     });
 </script>
 
@@ -174,7 +181,7 @@ $dataAll['fp_hash'] = strtoupper(euplatesc_mac($dataAll,$key));
             <li><a href="registration.html">Registration</a></li>
             <li><a href="not_available.html">Program</a></li>
             <li><a href="important_dates.html">Important Dates</a></li>
-            <li><a href="venue.html">Venue</a></li>
+            <li><a href="venue.html">Venue & Accommodation</a></li>
           </ul>
         </div>
       </div>
@@ -239,7 +246,15 @@ $dataAll['fp_hash'] = strtoupper(euplatesc_mac($dataAll,$key));
                     <img src="images/aria-logo.png" alt="Asociatia Romana de Inteligenta Artificiala" border="0" width="100%"/>
                 </a>
             </div>
-            <h1>News</h1>            <h3>Added tutorials</h3>
+                        <h1>News</h1><h3>Extended deadlines for industrial track</h3>
+            <p>
+              <strong>05.01.2012</strong>: Check the <a href="cfp-i.html">the industrial track</a> section for details.
+            </p>
+            <h3>Added accommodation information</h3>
+            <p>
+              <strong>23.02.2012</strong>: Check the <a href="venue.html">venue & accommodation section</a> for details.
+            </p>
+            <h3>Added tutorials</h3>
             <p>
               <strong>20.02.2012</strong>: Check the <a href="keynote.html">keynotes & tutorials section</a> for details.
             </p>
@@ -301,13 +316,13 @@ $dataAll['fp_hash'] = strtoupper(euplatesc_mac($dataAll,$key));
           <div id="col3_content" class="clearfix">
               <h1>Confirm registration</h1>
               <p>Please check that the information below if accurate before you submit your data. If you want to change anything <a href="javascript:history.go(-1)">go back</a> and make the necessary changes.</p>
-              <form ACTION="https://secure.euplatesc.ro/tdsprocess/tranzactd.php" METHOD="POST" name="gateway" target="_self">
+              <form ACTION="https://secure.euplatesc.ro/tdsprocess/tranzactd.php?lang=en" METHOD="POST" name="gateway" id="gateway" target="_self">
                   <!-- <p class="tx_red_mic">Transferring to EuPlatesc.ro gateway</p>
                   <p><img src="https://www.euplatesc.ro/plati-online/tdsprocess/images/progress.gif" alt="" title="" onload="javascript:document.gateway.submit()"></p> -->
                   <h4>Personal Information</h4>
                   <p>
                       <label for="title">Title</label>
-                      <select name="title" id="title" disabled="disabled">
+                      <select name="title" id="title" >
                           <option value="mr">Mr.</option>
                           <option value="mrs">Mrs.</option>
                           <option value="dr">Dr.</option>
@@ -316,66 +331,66 @@ $dataAll['fp_hash'] = strtoupper(euplatesc_mac($dataAll,$key));
                   </p>
                   <p>
                       <label for="first_name">First Name</label>
-                      <input type="text" name="fname" value="<?php echo $_POST['first_name']; ?>" id="fname" disabled="disabled"/>
+                      <input type="text" name="fname" value="<?php echo $_POST['first_name']; ?>" id="fname" />
                   </p>
                   <p>
                       <label for="last_name">Last Name</label>
-                      <input type="text" name="lname" value="<?php echo $_POST['last_name']; ?>" id="lname" disabled="disabled"/>
+                      <input type="text" name="lname" value="<?php echo $_POST['last_name']; ?>" id="lname" />
                   </p>
                   <p>
                       <label for="affiliation">Affiliation</label>
-                      <input type="text" name="company" value="<?php echo $_POST['affiliation']; ?>" id="company" disabled="disabled"/>
+                      <input type="text" name="company" value="<?php echo $_POST['affiliation']; ?>" id="company" />
                   </p>
                   <p>
                       <label for="address">Address</label>
-                      <input type="text" name="add" value="<?php echo $_POST['address']; ?>" id="add" disabled="disabled"/>
+                      <input type="text" name="add" value="<?php echo $_POST['address']; ?>" id="add" />
                   </p>
                   <p>
                       <label for="city">City</label>
-                      <input type="text" name="city" value="<?php echo $_POST['city']; ?>" id="city" disabled="disabled"/>
+                      <input type="text" name="city" value="<?php echo $_POST['city']; ?>" id="city" />
                   </p>
                   <p>
                       <label for="zip_code">Zip Code</label>
-                      <input type="text" name="zip" value="<?php echo $_POST['zip_code']; ?>" id="zip" disabled="disabled"/>
+                      <input type="text" name="zip" value="<?php echo $_POST['zip_code']; ?>" id="zip" />
                   </p>
                   <p>
                       <label for="country">Country</label>
-                      <select class="" id="country" name="country" disabled="disabled">
+                      <select class="" id="country" name="country" >
                           <option value="">Select One</option><option value="af">Afghanistan</option><option value="ax">Aland Islands</option><option value="al">Albania</option><option value="dz">Algeria</option><option value="as">American Samoa</option><option value="ad">Andorra</option><option value="ao">Angola</option><option value="ai">Anguilla</option><option value="aq">Antarctica</option><option value="ag">Antigua and Barbuda</option><option value="ar">Argentina</option><option value="am">Armenia</option><option value="aw">Aruba</option><option value="au">Australia</option><option value="at">Austria</option><option value="az">Azerbaijan</option><option value="bs">Bahamas</option><option value="bh">Bahrain</option><option value="bd">Bangladesh</option><option value="bb">Barbados</option><option value="by">Belarus</option><option value="be">Belgium</option><option value="bz">Belize</option><option value="bj">Benin</option><option value="bm">Bermuda</option><option value="bt">Bhutan</option><option value="bo">Bolivia</option><option value="ba">Bosnia and Herzegovina</option><option value="bw">Botswana</option><option value="bv">Bouvet Island</option><option value="br">Brazil</option><option value="io">British Indian Ocean Territory</option><option value="vg">British Virgin Islands</option><option value="bn">Brunei</option><option value="bg">Bulgaria</option><option value="bf">Burkina Faso</option><option value="bi">Burundi</option><option value="kh">Cambodia</option><option value="cm">Cameroon</option><option value="ca">Canada</option><option value="cv">Cape Verde</option><option value="ky">Cayman Islands</option><option value="cf">Central African Republic</option><option value="td">Chad</option><option value="cl">Chile</option><option value="cn">China</option><option value="cx">Christmas Island</option><option value="cc">Cocos (Keeling) Islands</option><option value="co">Colombia</option><option value="km">Comoros</option><option value="cg">Congo</option><option value="ck">Cook Islands</option><option value="cr">Costa Rica</option><option value="hr">Croatia</option><option value="cu">Cuba</option><option value="cy">Cyprus</option><option value="cz">Czech Republic</option><option value="cd">Democratic Republic of Congo</option><option value="dk">Denmark</option><option value="xx">Disputed Territory</option><option value="dj">Djibouti</option><option value="dm">Dominica</option><option value="do">Dominican Republic</option><option value="tl">East Timor</option><option value="ec">Ecuador</option><option value="eg">Egypt</option><option value="sv">El Salvador</option><option value="gq">Equatorial Guinea</option><option value="er">Eritrea</option><option value="ee">Estonia</option><option value="et">Ethiopia</option><option value="fk">Falkland Islands</option><option value="fo">Faroe Islands</option><option value="fm">Federated States of Micronesia</option><option value="fj">Fiji</option><option value="fi">Finland</option><option value="fr">France</option><option value="gf">French Guyana</option><option value="pf">French Polynesia</option><option value="tf">French Southern Territories</option><option value="ga">Gabon</option><option value="gm">Gambia</option><option value="ge">Georgia</option><option value="de">Germany</option><option value="gh">Ghana</option><option value="gi">Gibraltar</option><option value="gr">Greece</option><option value="gl">Greenland</option><option value="gd">Grenada</option><option value="gp">Guadeloupe</option><option value="gu">Guam</option><option value="gt">Guatemala</option><option value="gn">Guinea</option><option value="gw">Guinea-Bissau</option><option value="gy">Guyana</option><option value="ht">Haiti</option><option value="hm">Heard Island and Mcdonald Islands</option><option value="hn">Honduras</option><option value="hk">Hong Kong</option><option value="hu">Hungary</option><option value="is">Iceland</option><option value="in">India</option><option value="id">Indonesia</option><option value="ir">Iran</option><option value="iq">Iraq</option><option value="xe">Iraq-Saudi Arabia Neutral Zone</option><option value="ie">Ireland</option><option value="il">Israel</option><option value="it">Italy</option><option value="ci">Ivory Coast</option><option value="jm">Jamaica</option><option value="jp">Japan</option><option value="jo">Jordan</option><option value="kz">Kazakhstan</option><option value="ke">Kenya</option><option value="ki">Kiribati</option><option value="kw">Kuwait</option><option value="kg">Kyrgyzstan</option><option value="la">Laos</option><option value="lv">Latvia</option><option value="lb">Lebanon</option><option value="ls">Lesotho</option><option value="lr">Liberia</option><option value="ly">Libya</option><option value="li">Liechtenstein</option><option value="lt">Lithuania</option><option value="lu">Luxembourg</option><option value="mo">Macau</option><option value="mk">Macedonia</option><option value="mg">Madagascar</option><option value="mw">Malawi</option><option value="my">Malaysia</option><option value="mv">Maldives</option><option value="ml">Mali</option><option value="mt">Malta</option><option value="mh">Marshall Islands</option><option value="mq">Martinique</option><option value="mr">Mauritania</option><option value="mu">Mauritius</option><option value="yt">Mayotte</option><option value="mx">Mexico</option><option value="md">Moldova</option><option value="mc">Monaco</option><option value="mn">Mongolia</option><option value="me">Montenegro</option><option value="ms">Montserrat</option><option value="ma">Morocco</option><option value="mz">Mozambique</option><option value="mm">Myanmar</option><option value="na">Namibia</option><option value="nr">Nauru</option><option value="np">Nepal</option><option value="an">Netherlands Antilles</option><option value="nl">Netherlands</option><option value="nc">New Caledonia</option><option value="nz">New Zealand</option><option value="ni">Nicaragua</option><option value="ne">Niger</option><option value="ng">Nigeria</option><option value="nu">Niue</option><option value="nf">Norfolk Island</option><option value="kp">North Korea</option><option value="mp">Northern Mariana Islands</option><option value="no">Norway</option><option value="om">Oman</option><option value="pk">Pakistan</option><option value="pw">Palau</option><option value="ps">Palestinian Territories</option><option value="pa">Panama</option><option value="pg">Papua New Guinea</option><option value="py">Paraguay</option><option value="pe">Peru</option><option value="ph">Philippines</option><option value="pn">Pitcairn Islands</option><option value="pl">Poland</option><option value="pt">Portugal</option><option value="pr">Puerto Rico</option><option value="qa">Qatar</option><option value="re">Reunion</option><option value="ro">Romania</option><option value="ru">Russia</option><option value="rw">Rwanda</option><option value="sh">Saint Helena and Dependencies</option><option value="kn">Saint Kitts and Nevis</option><option value="lc">Saint Lucia</option><option value="pm">Saint Pierre and Miquelon</option><option value="vc">Saint Vincent and the Grenadines</option><option value="ws">Samoa</option><option value="sm">San Marino</option><option value="st">Sao Tome and Principe</option><option value="sa">Saudi Arabia</option><option value="sn">Senegal</option><option value="rs">Serbia</option><option value="sc">Seychelles</option><option value="sl">Sierra Leone</option><option value="sg">Singapore</option><option value="sk">Slovakia</option><option value="si">Slovenia</option><option value="sb">Solomon Islands</option><option value="so">Somalia</option><option value="za">South Africa</option><option value="gs">South Georgia and South Sandwich Islands</option><option value="kr">South Korea</option><option value="es">Spain</option><option value="pi">Spratly Islands</option><option value="lk">Sri Lanka</option><option value="sd">Sudan</option><option value="sr">Suriname</option><option value="sj">Svalbard and Jan Mayen</option><option value="sz">Swaziland</option><option value="se">Sweden</option><option value="ch">Switzerland</option><option value="sy">Syria</option><option value="tw">Taiwan</option><option value="tj">Tajikistan</option><option value="tz">Tanzania</option><option value="th">Thailand</option><option value="tg">Togo</option><option value="tk">Tokelau</option><option value="to">Tonga</option><option value="tt">Trinidad and Tobago</option><option value="tn">Tunisia</option><option value="tr">Turkey</option><option value="tm">Turkmenistan</option><option value="tc">Turks And Caicos Islands</option><option value="tv">Tuvalu</option><option value="vi">US Virgin Islands</option><option value="ug">Uganda</option><option value="ua">Ukraine</option><option value="ae">United Arab Emirates</option><option value="uk">United Kingdom</option><option value="um">United States Minor Outlying Islands</option><option value="us">United States</option><option value="uy">Uruguay</option><option value="uz">Uzbekistan</option><option value="vu">Vanuatu</option><option value="va">Vatican City</option><option value="ve">Venezuela</option><option value="vn">Vietnam</option><option value="wf">Wallis and Futuna</option><option value="eh">Western Sahara</option><option value="ye">Yemen</option><option value="zm">Zambia</option><option value="zw">Zimbabwe</option>
                       </select>
                   </p>
                   <p>
                       <label for="telephone">Telephone/Fax</label>
-                      <input type="text" name="phone" value="<?php echo $_POST['telephone']; ?>" id="phone" disabled="disabled"/>
+                      <input type="text" name="phone" value="<?php echo $_POST['telephone']; ?>" id="phone" />
                   </p>
                   <p>
                       <label for="email">Email</label>
-                      <input type="text" name="email" value="<?php echo $_POST['email']; ?>" id="email" disabled="disabled"/>
+                      <input type="text" name="email" value="<?php echo $_POST['email']; ?>" id="email" />
                   </p>
                   <h4>Paper Information</h4>
                   <p>
                       <label for="paper_1_id">Paper 1 ID</label>
-                      <input type="text" value="<?php echo $_POST['paper_1_id']; ?>" id="paper_1_id" disabled="disabled"/>
+                      <input type="text" value="<?php echo $_POST['paper_1_id']; ?>" id="paper_1_id" />
                   </p>
                   <p>
                       <label for="paper_1_title">Paper 1 Title</label>
-                      <input type="text" value="<?php echo $_POST['paper_1_title']; ?>" id="paper_1_title" disabled="disabled"/>
+                      <input type="text" value="<?php echo $_POST['paper_1_title']; ?>" id="paper_1_title" />
                   </p>
                   <p>
                       <label for="paper_2_id">Paper 2 ID</label>
-                      <input type="text" value="<?php echo $_POST['paper_2_id']; ?>" id="paper_2_id" disabled="disabled"/>
+                      <input type="text" value="<?php echo $_POST['paper_2_id']; ?>" id="paper_2_id" />
                   </p>
                   <p>
                       <label for="paper_2_title">Paper 2 Title</label>
-                      <input type="text" value="<?php echo $_POST['paper_2_title']; ?>" id="paper_2_title" disabled="disabled"/>
+                      <input type="text" value="<?php echo $_POST['paper_2_title']; ?>" id="paper_2_title" />
                   </p>
                   <p>
                       <label for="paper_3_id">Paper 3 ID</label>
-                      <input type="text" value="<?php echo $_POST['paper_3_id']; ?>" id="paper_3_id" disabled="disabled"/>
+                      <input type="text" value="<?php echo $_POST['paper_3_id']; ?>" id="paper_3_id" />
                   </p>
                   <p>
                       <label for="paper_3_title">Paper 3 Title</label>
-                      <input type="text" value="<?php echo $_POST['paper_3_title']; ?>" id="paper_3_title" disabled="disabled"/>
+                      <input type="text" value="<?php echo $_POST['paper_3_title']; ?>" id="paper_3_title" />
                   </p>
                   <p><strong style="font-size: 120%;">Total amount: <?php echo $dataAll["amount"] . " " . $dataAll["curr"] ?></strong></p>
                   <input type="hidden" name="amount" VALUE="<?php echo  $dataAll['amount'] ?>" SIZE="12" MAXLENGTH="12" />
