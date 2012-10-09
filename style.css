@@ -1,0 +1,21 @@
+body {
+	margin: 0px;
+}
+
+a, a:visited {
+	color: black;
+}
+
+#content {
+	width: 70%;
+	margin: 0px auto;
+}
+
+h1, h2, h3 {
+	font-family: 'Marcellus SC', garamond;
+	text-align: center;
+}
+
+#header {
+	text-align: center;
+}
