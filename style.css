@@ -1,5 +1,5 @@
 body {
-	margin: 0px;
+	margin: 0;
 }
 
 a, a:visited {
@@ -8,7 +8,7 @@ a, a:visited {
 
 #content {
 	width: 70%;
-	margin: 0px auto;
+	margin: 0 auto;
 }
 
 h1, h2, h3 {
@@ -18,4 +18,9 @@ h1, h2, h3 {
 
 #header {
 	text-align: center;
+}
+
+
+.emph {
+	font-weight: bold;
 }
