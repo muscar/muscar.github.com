@@ -1,41 +1,73 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Alex Muscar</title>
 
+	<!-- Google fonts -->
 	<link href="http://fonts.googleapis.com/css?family=Marcellus+SC" rel="stylesheet" type="text/css">
+
+	<!-- Styles -->
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="static/js/bootstrap/css/bootstrap.min.css">
+	<!-- Local styles -->
 	<link href="style.css" rel="stylesheet" type="text/css">
+	
+	<!-- Scripts -->
+	<!-- jQuery -->
+	<script type="text/javascript" src="static/js/jquery-1.8.2.min.js"></script>
+	<!-- Bootstrap -->
+	<script type="text/javascript" src="static/js/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div id="header">
-		<h1><a href="index.html">Alex Muscar</a></h1>
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<span class="brand" href="#">Alex Muscar</span>
+				<ul class="nav">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="teaching.html">Teaching</a></li>
+					<li class="active">
+						<a href="#">Python lectures</a>
+					</li>
+				</ul>
+			</div>
+		</div>
 	</div>
-	<div id="content">
-		<h1>Installing Python</h1>
+	<div class="container">
+		<ul class="breadcrumb">
+			<li>
+				<i class="icon-home"></i>
+				<a href="index.html">Home</a> <span class="divider">/</span>
+			</li>
+			<li><a href="python_lectures.html">Python lectures</a> <span class="divider">/</span></li>
+			<li class="active">Installing Python</li>
+		</ul>
+		<div class="page-header">
+			<h1>Installing Python</h1>
+		</div>
 		<div>
 			<h2>Windows</h2>
 			<p>
 				Download the Python installer from <a href="http://www.python.org/ftp/python/2.7.3/python-2.7.3.msi">here</a> (if you have a 64 bit version of windows you can use <a href="http://www.python.org/ftp/python/2.7.3/python-2.7.3.amd64.msi">this</a> installer). If for any reason you can't install the regular Python interpreter (e.g. yo don't have administrator rights on your Windows box) you can download a portable version of Python fro the mirrors at the bottom of <a href="http://portablepython.com/wiki/PortablePython2.7.3.1">this</a> page.
 			</p>
 			<p>
-				<strong>Note:</strong> avoid using spaces in the install path of your Python distribution.
+				<span class="label label-warning">Warning</span> Avoid using spaces in the install path of your Python distribution.
 			</p>
 			<h2>Linux</h2>
 			<p>
 				Most of the current major Linux distributions already have Python installed (e.g. Ubuntu, Fedora). If you don't have a Python interpreter you can try to install it via the distribution's usual package install process (usually major distributions come with graphical package managers). If that fails you can install from <a href="http://www.python.org/ftp/python/2.7.3/Python-2.7.3.tar.bz2">source</a>. If you're considering the last option I won't give any details since I assume you know what you're doing. Remember:
-				<pre>
-./configure &amp;&amp; make &amp;&amp; sudo make install
-				</pre>
+				<pre>./configure &amp;&amp; make &amp;&amp; sudo make install</pre>
 				or, if you don't have <span style="font-family: monospace;">sudo</span> installed:
-				<pre>
-./configure &amp;&amp; make &amp;&amp; su -c make install
-				</pre>
+				<pre>./configure &amp;&amp; make &amp;&amp; su -c make install</pre>
 			</p>
 			<h2>OS X</h2>
 			<p>
 				OS X comes with Python already installed.
 			</p>
 		</div>
-		<h1>Using the virtual machine disk image</h1>
+		<div class="page-header">
+			<h1>Using the virtual machine disk image</h1>
+		</div>
 		Download <a href="https://dl.dropbox.com/u/3240227/Xubuntu.vdi.zip">this</a> disk image. It has everything you need to get started. Download VirtualBox <a href="http://download.virtualbox.org/virtualbox/4.2.0/VirtualBox-4.2.0-80737-Win.exe">here</a> (or <a href="https://www.virtualbox.org/wiki/Linux_Downloads">here</a> for Linux, and <a href="http://download.virtualbox.org/virtualbox/4.2.0/VirtualBox-4.2.1-80871-OSX.dmg">here</a> for OS X). Install VirtualBox, then create a new virtual machine for Ubuntu Linux, set it to 512MB of RAM, and choose to use an existing disk, then navigate to the disk image you downloaded earlier. Start the virtual machine and get coding.
 	</div>
 </body>

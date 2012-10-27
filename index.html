@@ -1,20 +1,69 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<title>Alex Muscar</title>
-
+	
+	<!-- Google fonts -->
 	<link href="http://fonts.googleapis.com/css?family=Marcellus+SC" rel="stylesheet" type="text/css">
+
+	<!-- Styles -->
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="static/js/bootstrap/css/bootstrap.min.css">
+	<!-- Local styles -->
 	<link href="style.css" rel="stylesheet" type="text/css">
+	
+	<!-- Scripts -->
+	<!-- jQuery -->
+	<script type="text/javascript" src="static/js/jquery-1.8.2.min.js"></script>
+	<!-- Bootstrap -->
+	<script type="text/javascript" src="static/js/bootstrap/js/bootstrap.min.js"></script>
+	<!-- Email obfuscation -->
+	<script type="text/javascript" src="static/js/email.js"></script>
+
+	<script type="text/javascript">
+		$(function () {
+	        $('.email').mailto();
+		});
+	</script>
 </head>
 <body>
-	<div id="header">
-		<h1><a href="index.html">Alex Muscar</a></h1>
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<span class="brand" href="#">Alex Muscar</span>
+				<ul class="nav">
+					<li class="active">
+						<a href="#">Home</a>
+					</li>
+					<li><a href="teaching.html">Teaching</a></li>
+					<li><a href="python_lectures.html">Python lectures</a></li>
+				</ul>
+			</div>
+		</div>
 	</div>
-	<div id="content" style="text-align: center;">
-		<p>
-			[<a href="teaching.html">Teaching</a>]
-			[<a href="python_lectures.html">Python lectures</a>]
-		</p>
-		Contact: <a href="mailto:amuscar@software.ucv.ro">amuscar at software dot ucv dot ro</a>
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<ul class="breadcrumb">
+					<i class="icon-home"></i>
+					<li class="active">Home</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span12">
+				<p>
+					I am Ph.D. student at the Intelligent Distributed Systems research
+					group, University of Craiova. My primary research area is agent
+					oriented programming languages. I am also interested in anything
+					related to language design, functional programming, concurrent and
+					distributed systems.
+				</p>
+				<p>
+					You can reach me via <a href="amuscar(la)software[punct]ucv[punct]ro" class="email">email</a>.
+				</p>
+			</div>
+		</div>
 	</div>
 </body>
 </html>

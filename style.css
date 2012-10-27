@@ -1,26 +1,3 @@
 body {
-	margin: 0;
-}
-
-a, a:visited {
-	color: black;
-}
-
-#content {
-	width: 70%;
-	margin: 0 auto;
-}
-
-h1, h2, h3 {
-	font-family: 'Marcellus SC', garamond;
-	text-align: center;
-}
-
-#header {
-	text-align: center;
-}
-
-
-.emph {
-	font-weight: bold;
+	margin-top: 50px;
 }
