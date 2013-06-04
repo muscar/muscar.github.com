@@ -63,7 +63,7 @@ var promise = new promiseBuilder();
 
 // FB
 
-function FB() {
+function FacebookClient() {
 	this.get_wall_posts = function (v) {
 		var promise = jQuery.Deferred();
 		setTimeout(function () {
@@ -76,7 +76,7 @@ function FB() {
 
 // Twitter
 
-function Twitter() {
+function TwitterClient() {
 	this.get_tweets = function (v) {
 		var promise = jQuery.Deferred();
 		setTimeout(function () {
@@ -87,5 +87,5 @@ function Twitter() {
 	}
 }
 
-var facebook = new FB();
-var twitter = new Twitter();
+var facebook = new FacebookClient();
+var twitter = new TwitterClient();
