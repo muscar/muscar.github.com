@@ -146,7 +146,7 @@ var promise = new promiseBuilder();
 
 // FB
 
-function FB() {
+function Facebook() {
 	this.get_wall_posts = function (v) {
 		var promise = jQuery.Deferred();
 		setTimeout(function () {
@@ -170,5 +170,5 @@ function Twitter() {
 	}
 }
 
-var facebook = new FB();
+var facebook = new Facebook();
 var twitter = new Twitter();
