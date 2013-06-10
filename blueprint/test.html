@@ -19,8 +19,14 @@
 	      xfbml      : true
 	    });
 
-	    // Additional initialization code such as adding Event Listeners goes here
-	  };
+		 FB.login(function(response) {
+			if (response.authResponse) {
+				;
+			} else {
+			 	console.log('User cancelled login or did not fully authorize.');
+			}
+		 }, {scope: 'user_status'});
+ 	  };
 
 	  // Load the SDK asynchronously
 	  (function(d, s, id){
