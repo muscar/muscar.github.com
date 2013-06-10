@@ -147,12 +147,12 @@ var promise = new promiseBuilder();
 // FB
 
 function Facebook() {
-	this.get_wall_posts = function (v) {
+	this.statuses = function (v) {
 		var promise = jQuery.Deferred();
-		setTimeout(function () {
-			$unify(v, "facebook posts");
+		FB.api('/me/statuses', function (result) {
+			$unify(v, $cons.ofArray(result.data));
 			promise.resolve();
-		}, 1000);
+		});
 		return promise;
 	}
 }
