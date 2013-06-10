@@ -2,7 +2,9 @@
 <head>
 	<title>Test</title>
 	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-	<script type="text/javascript" src="blueprint.js?v01"></script>
+	<script type="text/javascript" src="fixup.js"></script>
+	<script type="text/javascript" src="blueprint.js"></script>
+	<script type="text/javascript" src="agent.js"></script>
     <script type="text/javascript">
     	var app_id = '210063665807387';
     </script>
@@ -14,14 +16,14 @@
 	  window.fbAsyncInit = function() {
 	    // init the FB JS SDK
 	    FB.init({
-	      appId      : app_id,
+	      appId      : 'muscar.github.io',
 	      channelUrl : '//muscar.github.io/blueprint.channel.html',
 	      status     : true,
 	      xfbml      : true
 	    });
 
-		FB.login();
-	};
+	    // Additional initialization code such as adding Event Listeners goes here
+	  };
 
 	  // Load the SDK asynchronously
 	  (function(d, s, id){
