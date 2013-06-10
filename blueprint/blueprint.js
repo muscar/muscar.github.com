@@ -150,7 +150,9 @@ function Facebook() {
 	this.statuses = function (v) {
 		var promise = jQuery.Deferred();
 		FB.api('/me/statuses', function (result) {
-			$unify(v, $cons.ofArray(result.data));
+			$unify(v, $cons.ofArray(result.data.map(function (status) {
+				return status.message;
+			})));
 			promise.resolve();
 		});
 		return promise;
