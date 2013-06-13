@@ -117,6 +117,9 @@ var blueprint = {
 		},
 		list: {
 			concat: function(l1, l2) {
+				if (l1 === $nil) {
+					return l2;
+				}
 				return l1.concat(l2);
 			}
 		},
