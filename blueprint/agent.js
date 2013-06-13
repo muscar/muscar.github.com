@@ -80,7 +80,7 @@ function agent() {
             Words.unbind();
             if ($unify(param0, new $cons(Status, Statuses)) && $unify(param1, Acc) && $unify(param2, R) && true) {
                 $unify(blueprint.lang.str.split(Status.getValue()), Words);
-                $unify(blueprint.lang.list.concat(Acc.getValue()), Words);
+                $unify(blueprint.lang.list.concat(Acc.getValue(), Words.getValue()), Acc1);
                 $self.collect(Statuses, Acc1, R)
             } else {
                 $error("plan collect failed")
