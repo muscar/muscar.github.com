@@ -34,7 +34,11 @@ $variable.prototype.toString = function () {
 	return this.value.toString();
 }
 
-var $nil = {};
+var $nil = {
+	getValue: function () {
+		return [];
+	}
+};
 
 function $cons(head, tail) {
 	var self = this;
