@@ -168,7 +168,7 @@ function Facebook() {
 		var promise = jQuery.Deferred();
 		FB.api('/me/statuses', function (result) {
 			$unify(v, $cons.ofArray(result.data.map(function (status) {
-				return status.message;
+				return status.message ? status.message : "";
 			})));
 			promise.resolve();
 		});
