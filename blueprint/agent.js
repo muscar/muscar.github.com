@@ -6,7 +6,7 @@ function agent() {
         Statuses.unbind();
         Words.unbind();
         if (true) {
-            promise.bind(facebook.statuses(), function (Statuses) {
+            promise.bind(facebook.statuses(Statuses), function () {
                 $self.collect(Statuses, $nil, Words);
                 $self.count_words(Words);
             })
