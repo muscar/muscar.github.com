@@ -110,6 +110,11 @@ function $unify(left, right) {
 
 var blueprint = {
 	lang: {
+		str: {
+			split: function (s) {
+				return s.split(' ');
+			}
+		},
 		dict: {
 			make: function () {
 				return {};

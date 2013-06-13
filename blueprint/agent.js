@@ -1,17 +1,14 @@
 function agent() {
     var $self = this;;
     this.social_plan = function () {
-        var Tweets = new $variable('Tweets');
-        var WallPosts = new $variable('WallPosts');
-        Tweets.unbind();
-        WallPosts.unbind();
+        var Statuses = new $variable('Statuses');
+        var Words = new $variable('Words');
+        Statuses.unbind();
+        Words.unbind();
         if (true) {
-            promise.bind(facebook.get_wall_posts(), function (WallPosts) {
-                window.alert(WallPosts.getValue());
-                promise.bind(twitter.get_tweets(), function (Tweets) {
-                    window.alert(Tweets.getValue());
-                    $self.correlate(WallPosts, Tweets);
-                });
+            promise.bind(facebook.statuses(), function (Statuses) {
+                $self.collect(Statuses, $nil, Words);
+                $self.count_words(Words);
             })
         } else {
             $error("plan social_plan failed")
@@ -61,16 +58,33 @@ function agent() {
             }
         }
     };
-    this.correlate = function (param0, param1) {
-        var P = new $variable('P');
-        var T = new $variable('T');
-        P.unbind();
-        T.unbind();
-        if ($unify(param0, P) && $unify(param1, T) && true) {
-            window.alert(P.getValue());
-            window.alert(T.getValue())
-        } else {
-            $error("plan correlate failed")
+    this.collect = function (param0, param1, param2) {
+        var Acc = new $variable('Acc');
+        var Acc1 = new $variable('Acc1');
+        var R = new $variable('R');
+        var Status = new $variable('Status');
+        var Statuses = new $variable('Statuses');
+        var Words = new $variable('Words');
+        Acc.unbind();
+        Acc1.unbind();
+        R.unbind();
+        Status.unbind();
+        Statuses.unbind();
+        Words.unbind();
+        if ($unify(param0, $nil) && $unify(param1, Acc) && $unify(param2, Acc) && true) {} else {
+            Acc.unbind();
+            Acc1.unbind();
+            R.unbind();
+            Status.unbind();
+            Statuses.unbind();
+            Words.unbind();
+            if ($unify(param0, new $cons(Status, Statuses)) && $unify(param1, Acc) && $unify(param2, R) && true) {
+                $unify(blueprint.lang.str.split(Status.getValue()), Words);
+                $unify(blueprint.lang.list.concat(Acc.getValue()), Words);
+                $self.collect(Statuses, Acc1, R)
+            } else {
+                $error("plan collect failed")
+            }
         }
     };
 }
