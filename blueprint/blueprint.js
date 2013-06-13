@@ -115,6 +115,11 @@ var blueprint = {
 				return s.split(' ');
 			}
 		},
+		list: {
+			concat: function(l1, l2) {
+				return l1.concat(l2);
+			}
+		},
 		dict: {
 			make: function () {
 				return {};
