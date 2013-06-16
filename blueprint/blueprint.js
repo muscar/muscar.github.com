@@ -199,7 +199,8 @@ function Facebook() {
     this.statuses = function (v) {
         var promise = jQuery.Deferred();
         FB.api('/me/statuses', function (result) {
-            console.log("/me/statuses result: " + result);
+            console.log("/me/statuses result:");
+            console.log(result);
             if (result['data'] == undefined) {
                 alert("An error occured. Could not fetch your status messages :(.");
                 $unify(v, $nil);
