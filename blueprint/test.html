@@ -40,6 +40,7 @@
         }
 
         function run() {
+            $("#cloud").clear();
             var a = new agent();
             a.social_plan();
         }
@@ -65,6 +66,7 @@
 
          FB.login(function(response) {
             if (response.authResponse) {
+                run();
                 $("#run-button").text("Run").removeAttr("disabled");
             } else {
                 $("#run-button").text("An error occured").attr("disabled", "disabled");
