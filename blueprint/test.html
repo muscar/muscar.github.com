@@ -49,7 +49,7 @@
     <div>
         This simple application will read your most recent facebook status messages and it will build a word cloud.
     </div>
-    <button id="run-button" disable="disabled" onclick="run();">Please wait...</button>
+    <button id="run-button" disabled="disabled" onclick="run();">Please wait...</button>
     <div id="cloud" style="width: 800px; height: 800px;">
     </div>
     <div id="fb-root"></div>
@@ -67,7 +67,7 @@
             if (response.authResponse) {
                 $("#run-button").text("Run").removeAttr("disabled");
             } else {
-                $("#run-button").text("Run").attr("disabled", "disabled");
+                $("#run-button").text("An error occured").attr("disabled", "disabled");
                 alert("In order for the demo to work you need to allow it to read your facebook status messages.");
             }
          }, { scope: 'user_status' });
