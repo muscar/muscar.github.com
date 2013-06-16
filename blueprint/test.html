@@ -38,11 +38,6 @@
                 "shape" : "circle" // the selected shape keyword, or a theta function describing a shape
             });
         }
-
-        $(function () {
-            var a = new agent();
-            a.social_plan();
-        });
     </script>
 </head>
 <body>
@@ -61,7 +56,8 @@
 
          FB.login(function(response) {
             if (response.authResponse) {
-                ;
+                var a = new agent();
+                a.social_plan();
             } else {
                 console.log('User cancelled login or did not fully authorize.');
             }
