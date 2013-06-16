@@ -38,10 +38,15 @@
                 "shape" : "circle" // the selected shape keyword, or a theta function describing a shape
             });
         }
+
+        function run() {
+            var a = new agent();
+            a.social_plan();
+        }
     </script>
 </head>
 <body>
-    <button id="run-button" disable="disabled">Please wait...</button>
+    <button id="run-button" disable="disabled" onclick="run();">Please wait...</button>
     <div id="cloud" style="width: 800px; height: 800px;">
     </div>
     <div id="fb-root"></div>
