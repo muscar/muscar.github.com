@@ -46,6 +46,9 @@
     </script>
 </head>
 <body>
+    <div>
+        This simple application will read your most recent facebook status messages and it will build a word cloud.
+    </div>
     <button id="run-button" disable="disabled" onclick="run();">Please wait...</button>
     <div id="cloud" style="width: 800px; height: 800px;">
     </div>
@@ -64,9 +67,10 @@
             if (response.authResponse) {
                 $("#run-button").text("Run").removeAttr("disabled");
             } else {
-                console.log('User cancelled login or did not fully authorize.');
+                $("#run-button").text("Run").attr("disabled", "disabled");
+                alert("In order for the demo to work you need to allow it to read your facebook status messages.");
             }
-         }, {scope: 'user_status'});
+         }, { scope: 'user_status' });
       };
 
       // Load the SDK asynchronously
