@@ -13,7 +13,7 @@
 
             for (var key in wordsDict) {
                 if (wordsDict.hasOwnProperty(key)) {
-                    container.append($('span').attr('data-weight', wordsDict[key]).text(key));
+                    container.append($('<span>').attr('data-weight', wordsDict[key]).text(key));
                 }
             }
 
