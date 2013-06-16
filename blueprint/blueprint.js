@@ -99,6 +99,14 @@ function $unify(left, right) {
         return right.length == 0;
     }
 
+    if (left instanceof Array && right instanceof $cons && left.length > 0) {
+        return $unify(right.head, left[0]) && $unify(right.tail, left.slice(1));
+    }
+
+    if (right instanceof Array && left instanceof $cons && right.length > 0) {
+        return $unify(left.head, right[0]) && $unify(left.tail, right.slice(1));
+    }
+
     if (left instanceof Array && right instanceof Array) {
         if (left.length != right.length) {
             return false;
