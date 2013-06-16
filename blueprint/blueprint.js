@@ -23,10 +23,11 @@ function $variable(name) {
     }
 
     this.getValue = function () {
-        if (self.value instanceof $variable) {
-            return self.value.getValue();
+        var result = self.value;
+        if (result instanceof $variable) {
+            result = result.getValue();
         }
-        return self.value;
+        return result;
     }
 }
 
