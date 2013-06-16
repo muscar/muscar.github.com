@@ -12,6 +12,9 @@ function $variable(name) {
         if (self.value != null) {
             throw "Variable " + name + " is already bound.";
         }
+        while (value instanceof $variable && value.bound()) {
+            value = value.getValue();
+        }
         self.value = value;
     };
 
@@ -85,6 +88,14 @@ function $atomic(term) {
 function $unify(left, right) {
     if ($atomic(left) && $atomic(right)) {
         return left == right;
+    }
+
+    if (left instanceof Array && right == $nil) {
+        return left.length == 0;
+    }
+
+    if (right instanceof Array && left == $nil) {
+        return right.length == 0;
     }
 
     if (left instanceof Array && right instanceof Array) {
