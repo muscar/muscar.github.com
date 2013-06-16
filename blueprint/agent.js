@@ -43,7 +43,7 @@ function agent() {
         W.unbind();
         Ws.unbind();
         if ($unify(param0, $nil) && $unify(param1, D) && true) {
-            console.log(D.getValue())
+            window.makeCloud("#cloud", D.getValue())
         } else {
             C.unbind();
             D.unbind();
