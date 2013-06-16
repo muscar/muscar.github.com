@@ -10,6 +10,7 @@
     <script type="text/javascript">
         function makeCloud(elementId, wordsDict) {
             var container = $(elementId);
+            container.clear();
 
             for (var key in wordsDict) {
                 if (wordsDict.hasOwnProperty(key)) {
@@ -40,7 +41,6 @@
         }
 
         function run() {
-            $("#cloud").clear();
             var a = new agent();
             a.social_plan();
         }
@@ -66,8 +66,8 @@
 
          FB.login(function(response) {
             if (response.authResponse) {
-                run();
                 $("#run-button").text("Run").removeAttr("disabled");
+                run();
             } else {
                 $("#run-button").text("An error occured").attr("disabled", "disabled");
                 alert("In order for the demo to work you need to allow it to read your facebook status messages.");
