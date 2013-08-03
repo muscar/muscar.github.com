@@ -1,3 +1,5 @@
 *.latex
 *.sublime-project
 *.sublime-workspace
+_site/
+.gitignore
