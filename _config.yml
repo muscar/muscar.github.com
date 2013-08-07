@@ -1,3 +1,10 @@
-name: Your New Jekyll Site
-markdown: redcarpet
+author: Alex Muscar
+title: Alex's blog
+description: Mostly musings on programming
+url: http://alexmuscar.com
+
+permalink: /:year/:month/:day/:title/
+paginate: 10
 pygments: true
+
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
