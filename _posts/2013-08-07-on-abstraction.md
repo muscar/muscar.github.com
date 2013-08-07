@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-08-07 09:56
-title: On abstraction
+title: On pattern matching and data abstraction
 tags: Lisp, abstraction, abstract data types, pattern matching, functional programming
 ---
 
