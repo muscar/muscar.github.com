@@ -13,7 +13,7 @@ One of the favourite taglines of FP advocacy is that FP languages allow you to w
 
 Let's get over the fact that they don't give any proof for their claims, beside some user testimonials---which are inevitably highly context sensitive or biased or both. That's because it's hard to quantify such claims. For an in-depth discussion on this matter read [this essay](http://tagide.com/blog/2012/03/research-in-programming-languages/).
 
-What I'd like to focus on for the rest of this post is one of the most common features that FP advocates like to mention when it comes to the concisencess of programs written in FP languages: the combination of Algebraic Data Types (ADT) and pattern matching (PM).
+What I'd like to focus on for the rest of this post is one of the most common features that FP advocates like to mention when it comes to the concisencess of programs written in FP languages: the combination of Algebraic Data Types (ADT) and pattern matching (PM). While making programs shorter, PM makes the less resiliant to change, thus less robust. That is because _pattern matching breaks abstraction_.
 
 ## Pattern matching breaks abstraction
 
@@ -76,6 +76,4 @@ let rec eval = function
 
 This is why pattern matching breaks abstraction: when we pattern match on a value, we're taking it apart bit by bit so we need to know what it's "shape" is, i.e. we're working with _concrete types_. This is the exact opposite of an abstract type, a type whose representation does not matter.
 
-## Footnotes
-
-1. This is actually a well known problem in the world of compilers and interpreters implemented in functional languages. For an in-depth discussion head [here](http://lambda-the-ultimate.org/node/4170).
+This is actually a well known problem in the world of compilers and interpreters implemented in functional languages, known as the _AST Typing Problem_. For an in-depth discussion [head to LtU](http://lambda-the-ultimate.org/node/4170). More generally, the tension between PM and data abstraction has been noted [as far back as '87](http://www.cs.tufts.edu/~nr/cs257/archive/views/wadler.pdf). The proposed solution, called _views_, hasn't gained much traction in the FP community. F# has adopted _active patterns_, which are another approach for mixing PM and abstract data types, but PM is still predominant in F# programs.
