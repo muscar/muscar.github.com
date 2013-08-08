@@ -7,6 +7,8 @@ tags: Lisp, abstraction, abstract data types, pattern matching, functional progr
 
 Functional programming (FP) has gathered a lot of momentum in the past couple of years. There's an increasing number of job postings requiring FP skills in languages such as Scala, F#, Haskell or even OCaml. Everyone and their dog is writing blog posts or pushing tweets on how productive FP has made them, and why everyone should start using it. And it's good that FP has finally made it into mainstream, because it brings quite a few neat ideas to the game. But, as with any new fad, there are people bound to jump on the FP bandwagon just because it happens to be "the thing" this year. The same happened with OOP, Java, Ruby and so on.
 
+<!-- more -->
+
 One of the favourite taglines of FP advocacy is that FP languages allow you to write concise and robust software. To quote Haskell's website frontpage:
 
 > Haskell is an advanced purely-functional programming language. An open-source product of more than twenty years of cutting-edge research, it allows rapid development of robust, concise, correct software.
