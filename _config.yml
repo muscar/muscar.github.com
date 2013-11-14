@@ -1,10 +1,12 @@
-author: Alex Muscar
-title: Alex's blog
-description: Mostly musings on programming
-url: http://alexmuscar.com
+name: Alex Muscar's blog
+description: Programming, tabletop RPGs and other stuff I like
+meta_description: "Your New Jekyll Site, Blogging about stuffs"
 
-permalink: /:year/:month/:day/:title/
-paginate: 10
+markdown: redcarpet
 pygments: true
+logo: false
+paginate: 15
 
-exclude: ['README.md', 'Gemfile.lock', 'Gemfile', 'Rakefile']
+# Details for the RSS feed generator
+url:            'muscar.github.io'
+author:         'Alex Muscar'

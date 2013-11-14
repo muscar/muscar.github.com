@@ -1,44 +1,38 @@
-Solar Theme for Jekyll
-======================
+# Kasper
 
-A stylish theme for [Jekyll](http://jekyllrb.com/) blogs, based on the [Solarized](http://ethanschoonover.com/solarized) color palette.
+This is a port of Ghost's default theme [Casper](https://github.com/tryghost/casper) for Jekyll. 
+Feel free to fork, change, modify and re-use it.
 
-![Screenshot](http://i.imgur.com/UnnRhkt.png)
+## How to use it
 
+Simply clone this repository, and then run `jekyll -w serve` inside the directory.
 
-Features
--------
+Kasper theme includes:
 
-* **Two color schemes** — One for Solarized Dark and one for Solarized Light. Just swap the reference to the `colors-dark.css` file with `colors-light.css` if you don't like light-on-dark.
-* **Linkblog support** — Solar will turn your post title into an external link if you add `external-url: http://example.org` to a post's YAML front matter.
-* **Responsive Design** — Solarized adapts to fit any screen size.
+* Pagination
+* Rss
+* Google Analytics Tracking code
+* Code Syntax Highlight
+* Author's profile with picture
+* Disqus comments
 
+## Screenshots
 
-Installation
---------------
-
-There are two ways to use Solar. You can either clone-and-go, copying the repository and tweaking the contents to taste, or you can cherry-pick the files you want and integrate them into an existing Jekyll instance. 
-
-If you're starting a new blog, you want to clone-and-go. Just `git clone https://github.com/redwallhp/solar-theme-jekyll.git`, make any changes you want to the template, pages or `_config.yml` and start blogging with Jekyll. Easy.
-
-If you're wanting to replace the theme of an existing Jekyll blog, either option should work. If you want to replace files individually, the files and directories you want to make sure to copy are:
-
-1. `_layouts`
-2. `archives`
-3. `assets`
-4. `feed.xml`
-5. `index.xml`
-
-You'll also want to compare Solar's `_config.yml` with your own, making any appropriate changes.
+![index page](https://raw.github.com/rosario/kasper/master/assets/images/kasper-theme-index.png)
+![post page](https://raw.github.com/rosario/kasper/master/assets/images/kasper-theme-post.png)
 
 
-Demo
--------
+## Thanks 
+Most of the work as been already done by the Ghost team, I've just ported Casper to Jekyll. 
+I've also added few things for specifid to Jekyll and some minor style changes.
 
-You can see a demo of Solar [right here on GitHub Pages.](http://redwallhp.github.io/solar-theme-jekyll/)
+## Copyright & License
 
+Copyright (C) 2013 Ghost Foundation - Released under the MIT License.
 
-License
----------
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-GPLv2 or higher
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
