@@ -1,12 +1,3 @@
-name: Alex Muscar's blog
-description: Programming, tabletop RPGs and other stuff I like
-meta_description: "Your New Jekyll Site, Blogging about stuffs"
-
+name: Alex's blog
 markdown: redcarpet
 pygments: true
-logo: false
-paginate: 15
-
-# Details for the RSS feed generator
-url:            'muscar.github.io'
-author:         'Alex Muscar'
