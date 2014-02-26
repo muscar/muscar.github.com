@@ -1,3 +1,12 @@
 name: Alex's blog
 markdown: redcarpet
 pygments: true
+
+links:
+  - title: Home
+    url: /
+  - title: Teaching
+    url: /teaching
+
+redcarpet:
+  extensions: ['smart']
