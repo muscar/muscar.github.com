@@ -13,6 +13,6 @@ modified: 2014-02-26
 
 ## Recursive algorithms in Prolog; compound terms and lists
 
-## Search algorithms (uninformed and heuristic
+## Search algorithms (uninformed and heuristic)
 
 ## Search algorithms in Prolog

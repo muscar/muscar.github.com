@@ -7,6 +7,51 @@ modified: 2014-02-26
 
 # Programming techniques, Spring 2014
 
+## Resources
+
+### Compilers and IDEs
+
+Depending on your platform you have various options.
+
+#### Windows
+
+You can use [Visual Studio Express](http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-windows-desktop).
+In order to choose GCC on Windows you can either install [MinGW](http://www.mingw.org),
+and use your favourite editor---[Sublime Text](http://www.sublimetext.com/3) is
+a good choice---or you can download [Code::Blocks](http://www.codeblocks.org)
+which comes bundled with its own GCC.
+
+#### OS X
+
+The best choice is [Xcode](https://developer.apple.com/xcode/).
+
+#### Linux
+
+You have a wide variety of IDEs. A decent choice is [Eclipse CDT](http://www.eclipse.org/cdt/).
+You can also use [Code::Blocks](http://www.codeblocks.org).
+
+### LaTeX
+
+In order to typeset your documentation you'll need LaTeX system. 
+
+#### Windows
+
+You can use [MiKTeX](http://miktex.org/download). You can edit your LaTeX
+documents in any text editor, but [Texmaker](http://www.xm1math.net/texmaker/)
+has some features that make your life easier.
+
+#### OS X
+
+You can use [MacTeX](http://www.tug.org/mactex/). It comes with TeXShop, an
+editor with a decent set of features to get you started editing LaTeX.
+
+#### Linux
+
+You can use your distro's package manager to install a LaTeX system. You can use
+[Texmaker](http://www.xm1math.net/texmaker/) to edit your LaTeX sources.
+
+* * *
+
 ## Lab 1: Introduction + Administrativia
 
 **Practical aspects:**
