@@ -7,6 +7,8 @@ modified: 2014-02-26
 
 # Programming techniques, Spring 2014
 
+<span style="color: red;">**Note**: details on assignments and how to submit them will follow shortly.</span>
+
 ## Resources
 
 ### Compilers and IDEs
