@@ -6,7 +6,7 @@ modified: 2014-03-12
 ---
 # Assignment 1
 
-The following facts representing a family tree:
+The following facts represent a family tree:
 
     % ioana and ioan have two children: andrei and andreea
     parent(ioana, andrei).
