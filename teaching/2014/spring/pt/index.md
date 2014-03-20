@@ -7,8 +7,6 @@ modified: 2014-02-26
 
 # Programming techniques, Spring 2014
 
-<span style="color: red;">**Note**: details on assignments and how to submit them will follow shortly.</span>
-
 ## Resources
 
 ### Compilers and IDEs
@@ -64,12 +62,13 @@ You can use your distro's package manager to install a LaTeX system. You can use
 
 ## Lab 2: Elementary sorts
 
+<span style="color: red;">**Assignment**:</span> You can find the assignment [here](assignments/assignment1.html).
+
 **Algorithms/data structures:**
 
 - Selection sort
 - Insertion sort
 - Shellsort
-
 
 **Practical aspects:**
 
@@ -78,6 +77,8 @@ You can use your distro's package manager to install a LaTeX system. You can use
 
 
 ## Lab 3: Divide and Conquer. Advanced sorts
+
+<span style="color: red;">**Assignment**:</span> You can find the assignment [here](assignments/assignment2.html).
 
 **Algorithms/data structures:**
 
