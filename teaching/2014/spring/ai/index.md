@@ -15,6 +15,7 @@ Assignment 1 is available [here](assignment1.html "Assignment 1").
 ## Interpretations and proof strategies
 
 ## Recursive algorithms in Prolog; compound terms and lists
+Assignment 2 is available [here](assignment2.html "Assignment 2").
 
 ## Search algorithms (uninformed and heuristic)
 
