@@ -62,7 +62,7 @@ When people say that optional values help solve the null reference problem, they
 are referring to the fact that in languages like Haskell or ML, the compiler
 forces you to check if you actually have a meaningful value. It's a tradeoff:
 people don't use optional values because it's fun or becasue it makes the code
-terser, but because it makes the code _safer_.By introducing implicitly
+terser, but because it makes the code _safer_. By introducing implicitly
 unwrapped optionals, the Swift designers try to have their cake and eat it too:
 they want the safety of optional values with the ease of use of implicit
 references. But that's not going to work. Statements like "Sometimes it is clear
