@@ -10,8 +10,8 @@ quite true. Let's see why.
 While Swift is not the first language to have optional types--Haskell and ML
 have had optional types for quite some time--they are more closely integrated
 with the language. The language offers a terse notation for optional types `T?`,
-and _optional bindings_ which make working with optional types easier than in
-languages that only offer library support for them. Let's look at an example
+and special syntax which makes working with them easier than in languages that
+only offer library support for them. Let's look at an example
 
     func tryInc(n: Int?) -> Int? {
         if let x = n {
@@ -20,11 +20,11 @@ languages that only offer library support for them. Let's look at an example
         return nil
     }
 
-The `tryInc` function increments an integer value only if it's non nil. The
-`if let` part is what Swift's designers call optional binding. It's a terser way
-of working with optional values than having to pattern match on the optional
-value, like you'd have to do in Haskell or ML. Nice as it may be, this approach
-doesn't scale in Swift, and that's mainly because Swift has to play as nicely as
+The `tryInc` function increments an integer value only if it's non `nil`. The
+`if let` part is what Swift's designers call _optional binding_. It's a terser
+way of working with optional values than having to pattern match on the value,
+like you'd have to do in Haskell or ML. Nice as it may be, this approach doesn't
+scale in Swift, and that's mainly because Swift has to play as nicely as
 possible with Cocoa.
 
 ## Swift optionals, the bad parts
@@ -32,9 +32,9 @@ possible with Cocoa.
 Most Cocoa types have reference semantics, with `nil` being the de facto way of
 signaling the absence of a meaningful value. It's only natural for Swift to
 model them as optional types. And that's a perfectly reasonable approach. But,
-since such optional types are pervasive in Cocoa, it would become tedious to use
-optional binding everywhere to test if the value has a type or not--kind of like
-null checking in Java or C#. So the Swift designers introduced _implicitly
+since such types are pervasive in Cocoa, it would become tedious to use optional
+binding everywhere to test if the value has a type or not--kind of like
+`null` checking in Java or C#. So the Swift designers introduced _implicitly
 unwrapped optionals_, denoted as `T!`:
 
 > Sometimes it is clear from a program’s structure that an optional will always
@@ -69,16 +69,16 @@ references. But that's not going to work. Statements like "Sometimes it is clear
 from a program’s structure that an optional will always have a value" sound like
 hand-waving to me. Nothing is "clear" unless you formally prove it, and not even
 then. As soon as you cross the borders of your program into library-land, you
-loose all control over the values of your optionals. The value of optionals lies
+lose all control over the values of your optionals. The appeal of optionals lies
 in the fact that the compiler forces you to check that they have a meaningful
-value. By allowing the programmer to skip these checks the value of optionals is
-nullified. Implicitly unwrapped optionals rely too much on the programmers'
-discipline, and let's face it, programmers are not the most disciplined human
-beings. People will use implicitly unwrapped optionals becasue the're easier to
-use and shorter to write--as a parallel, I've already seen plenty of Swift
-tutorials that use `var` even when the value doesn't need to change. It's
-natural to choose the path of least resistance, but in programming it's not
-always the best choice.
+value. By allowing the programmer to skip these checks the usefulness of
+optionals is nullified. Implicitly unwrapped optionals rely too much on the
+programmers' discipline, and let's face it, programmers are not the most
+disciplined human beings. People will use implicitly unwrapped optionals becasue
+the're easier to use and shorter to write--as a parallel, I've already seen
+plenty of Swift tutorials that use `var` even when the value doesn't need to
+change. It's natural to choose the path of least resistance, but in programming
+it's not always the best choice.
 
 ## In conclusion
 
