@@ -69,16 +69,17 @@ references. But that's not going to work. Statements like "Sometimes it is clear
 from a program’s structure that an optional will always have a value" sound like
 hand-waving to me. Nothing is "clear" unless you formally prove it, and not even
 then. As soon as you cross the borders of your program into library-land, you
-lose all control over the values of your optionals. The appeal of optionals lies
-in the fact that the compiler forces you to check that they have a meaningful
-value. By allowing the programmer to skip these checks the usefulness of
-optionals is nullified. Implicitly unwrapped optionals rely too much on the
-programmers' discipline, and let's face it, programmers are not the most
-disciplined human beings. People will use implicitly unwrapped optionals becasue
-the're easier to use and shorter to write--as a parallel, I've already seen
-plenty of Swift tutorials that use `var` even when the value doesn't need to
-change. It's natural to choose the path of least resistance, but in programming
-it's not always the best choice.
+lose all control over the values of your optionals.
+
+The appeal of optionals lies in the fact that the compiler forces you to check
+that they have a meaningful value. By allowing the programmer to skip these
+checks the usefulness of optionals is nullified. Implicitly unwrapped optionals
+rely too much on the programmers' discipline, and let's face it, programmers are
+not the most disciplined human beings. People will use implicitly unwrapped
+optionals becasue the're easier to use and shorter to write--as a parallel, I've
+already seen plenty of Swift tutorials that use `var` even when the value
+doesn't need to change. It's natural to choose the path of least resistance, but
+in programming it's not always the best choice.
 
 ## In conclusion
 
