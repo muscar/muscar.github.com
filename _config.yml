@@ -1,0 +1,14 @@
+# Site settings
+title: Structure and Interpretation of My Thoughts
+email: alex.muscar@gmail.com
+description: "Musings (and rants) about programming languages and other stuff that I happen to fancy at some point in time."
+baseurl: ""
+url: "http://alexmuscar.com"
+twitter_username: streetofmysoul
+github_username:  muscar
+
+highlighter: pygments
+
+# Build settings
+markdown: kramdown
+permalink: pretty

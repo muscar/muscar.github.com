@@ -1,4 +1,9 @@
-# No, Swift doesn't solve the null reference problem
+---
+layout: post
+title:  "No, Swift doesn't solve the null reference problem"
+date:   2014-06-12 15:26:29
+categories: swift null-references safety
+---
 
 There's been a lot of hype surrounding Apple's Swift language since its release.
 Some have claimed that, thanks to its support for optional types, it solves the
@@ -7,18 +12,13 @@ quite true. Let's see why.
 
 ## Swift optionals, the good parts
 
-While Swift is not the first language to have optional types--Haskell and ML
-have had optional types for quite some time--they are more closely integrated
+While Swift is not the first language to have optional types---Haskell and ML
+have had optional types for quite some time---they are more closely integrated
 with the language. The language offers a terse notation for optional types `T?`,
 and special syntax which makes working with them easier than in languages that
-only offer library support for them. Let's look at an example
+only offer library support for them. Let's look at an example:
 
-    func tryInc(n: Int?) -> Int? {
-        if let x = n {
-            return x + 1
-        }
-        return nil
-    }
+{% gist muscar/3732f15691e33ea5b04b %}
 
 The `tryInc` function increments an integer value only if it's non `nil`. The
 `if let` part is what Swift's designers call _optional binding_. It's a terser
@@ -33,7 +33,7 @@ Most Cocoa types have reference semantics, with `nil` being the de facto way of
 signaling the absence of a meaningful value. It's only natural for Swift to
 model them as optional types. And that's a perfectly reasonable approach. But,
 since such types are pervasive in Cocoa, it would become tedious to use optional
-binding everywhere to test if the value has a type or not--kind of like
+binding everywhere to test if the value has a type or not---kind of like
 `null` checking in Java or C#. So the Swift designers introduced _implicitly
 unwrapped optionals_, denoted as `T!`:
 
@@ -46,14 +46,12 @@ unwrapped optionals_, denoted as `T!`:
 
 Using implicitly unwrapped optionals, the `tryInc` function above becomes:
 
-    func tryIncUnsafe(n: Int!) -> Int? {
-        return n + 1
-    }
+{% gist muscar/9bc1e7e818d51c059dda %}
 
-That's a lot terser, but also _unsafe_--yeah, I know, the name gave it away. If
+That's a lot terser, but also _unsafe_---yeah, I know, the name gave it away. If
 you pass `tryIncUnsafe` a value it behaves like you'd expect. But try passing it
 `nil`, and you'll get a runtime exception: `fatal error: Can't unwrap Optional.None`.
-This is just as bad as raw pointers in C--indeed, you might say that Swift's
+This is just as bad as raw pointers in C---indeed, you might say that Swift's
 `T!` is equivalent to C's `T *`.
 
 ## The value of optionals
@@ -76,13 +74,13 @@ that they have a meaningful value. By allowing the programmer to skip these
 checks the usefulness of optionals is nullified. Implicitly unwrapped optionals
 rely too much on the programmers' discipline, and let's face it, programmers are
 not the most disciplined human beings. People will use implicitly unwrapped
-optionals becasue the're easier to use and shorter to write--as a parallel, I've
+optionals becasue the're easier to use and shorter to write---as a parallel, I've
 already seen plenty of Swift tutorials that use `var` even when the value
 doesn't need to change. It's natural to choose the path of least resistance, but
 in programming it's not always the best choice.
 
 ## In conclusion
 
-The intent of this post is not bash Swift--it's an interesting language--but to
+The intent of this post is not bash Swift---it's an interesting language---but to
 straighten out the issue of Swift's solving the null reference problem, which
 might lull some people into a false sense of security.
