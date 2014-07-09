@@ -10,5 +10,6 @@ github_username:  muscar
 highlighter: pygments
 
 # Build settings
+
 markdown: kramdown
 permalink: pretty
