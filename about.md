@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /about/
+weight: 10
 ---
 
 I'm a teaching assistant at the University of Craiova. I'm a language geek---both

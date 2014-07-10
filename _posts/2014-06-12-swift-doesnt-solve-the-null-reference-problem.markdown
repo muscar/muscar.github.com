@@ -18,7 +18,14 @@ with the language. The language offers a terse notation for optional types `T?`,
 and special syntax which makes working with them easier than in languages that
 only offer library support for them. Let's look at an example:
 
-{% gist muscar/3732f15691e33ea5b04b %}
+{% highlight swift %}
+func tryInc(n: Int?) -> Int? {
+    if let x = n {
+        return x + 1
+    }
+    return nil
+}
+{% endhighlight %}
 
 The `tryInc` function increments an integer value only if it's non `nil`. The
 `if let` part is what Swift's designers call _optional binding_. It's a terser
@@ -46,13 +53,23 @@ unwrapped optionals_, denoted as `T!`:
 
 Using implicitly unwrapped optionals, the `tryInc` function above becomes:
 
-{% gist muscar/9bc1e7e818d51c059dda %}
+{% highlight swift %}
+func tryIncUnsafe(n: Int!) -> Int? {
+    return n + 1
+}
+{% endhighlight %}
 
 That's a lot terser, but also _unsafe_---yeah, I know, the name gave it away. If
 you pass `tryIncUnsafe` a value it behaves like you'd expect. But try passing it
 `nil`, and you'll get a runtime exception: `fatal error: Can't unwrap Optional.None`.
 This is just as bad as raw pointers in C---indeed, you might say that Swift's
 `T!` is equivalent to C's `T *`.
+
+**UPDATE**: as [@burntsushi](http://www.reddit.com/user/burntsushi) points out
+in [this reddit discussion](http://www.reddit.com/r/programming/comments/27yy5f/no_swift_doesnt_solve_the_null_reference_problem/),
+Swift's implicitly unwrapped optionals are not _as bad as_ C's raw pointers
+since the latter can lead to _undefined behaviour_, i.e. the program could do
+_anything_, while the former will predictably crash your program.
 
 ## The value of optionals
 
