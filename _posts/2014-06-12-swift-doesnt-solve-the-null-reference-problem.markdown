@@ -18,14 +18,14 @@ with the language. The language offers a terse notation for optional types `T?`,
 and special syntax which makes working with them easier than in languages that
 only offer library support for them. Let's look at an example:
 
-```swift
+{% highlight swift %}
 func tryInc(n: Int?) -> Int? {
     if let x = n {
         return x + 1
     }
     return nil
 }
-```
+{% endhighlight %}
 
 The `tryInc` function increments an integer value only if it's non `nil`. The
 `if let` part is what Swift's designers call _optional binding_. It's a terser
@@ -53,11 +53,11 @@ unwrapped optionals_, denoted as `T!`:
 
 Using implicitly unwrapped optionals, the `tryInc` function above becomes:
 
-```swift
+{% highlight swift %}
 func tryIncUnsafe(n: Int!) -> Int? {
     return n + 1
 }
-```
+{% endhighlight %}
 
 That's a lot terser, but also _unsafe_---yeah, I know, the name gave it away. If
 you pass `tryIncUnsafe` a value it behaves like you'd expect. But try passing it
