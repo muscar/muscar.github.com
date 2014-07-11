@@ -17,7 +17,7 @@
         </svg>
       </a>
       <div class="trigger">
-        {% assign sorted_pages = site.pages | sort: 'weight' %}
+        {% assign sorted_pages = site.pages %}
         {% for page in sorted_pages reversed %}
           {% if page.title %}
             <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>

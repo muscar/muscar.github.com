@@ -7,6 +7,9 @@ url: "http://alexmuscar.com"
 twitter_username: streetofmysoul
 github_username:  muscar
 
+markdown: redcarpet
+redcarpet:
+  extensions: ["fenced_code_blocks"]
 highlighter: pygments
 
 # Build settings
