@@ -15,6 +15,7 @@ procedures and file I/O.
 * **Lecture #2**: Pythonic code
     - Date: 12<sup>th</sup> of July, 2014
     - Topics: using builtin functions and types, list comprehensions
+    - The code for this lecture is up. Get it from [here](https://github.com/muscar/open4tech-intro-to-python/tree/master/lecture2).
 * **Lecture #3**: _TBA_
     - Date: 14<sup>th</sup> of July, 2014
     - Topics: _TBA_
