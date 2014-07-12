@@ -12,9 +12,9 @@ The code samples discussed during the lectures will be available in [this GitHub
     - Topics: Python syntax, "pythonic" style, control flow statements,
 procedures and file I/O.
     - The code for this lecture is up. Get it from [here](https://github.com/muscar/open4tech-intro-to-python/tree/master/lecture1).
-* **Lecture #2**: _TBA_
+* **Lecture #2**: Pythonic code
     - Date: 12<sup>th</sup> of July, 2014
-    - Topics: _TBA_
+    - Topics: using builtin functions and types, list comprehensions
 * **Lecture #3**: _TBA_
     - Date: 14<sup>th</sup> of July, 2014
     - Topics: _TBA_
