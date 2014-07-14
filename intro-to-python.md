@@ -16,9 +16,10 @@ procedures and file I/O.
     - Date: 12<sup>th</sup> of July, 2014
     - Topics: using builtin functions and types, list comprehensions
     - The code for this lecture is up. Get it from [here](https://github.com/muscar/open4tech-intro-to-python/tree/master/lecture2).
-* **Lecture #3**: _TBA_
+* **Lecture #3**: Object Oriented Programming in Python
     - Date: 14<sup>th</sup> of July, 2014
-    - Topics: _TBA_
+    - Topics: Classes, properties, static methods and the builde pattern
+    - The code for this lecture is up. Get it from [here](https://github.com/muscar/open4tech-intro-to-python/tree/master/lecture3).
 * **Lecture #4**: _TBA_
     - Date: 15<sup>th</sup> of July, 2014
     - Topics: _TBA_
