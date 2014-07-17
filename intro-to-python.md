@@ -24,9 +24,10 @@ procedures and file I/O.
     - Date: 15<sup>th</sup> of July, 2014
     - Topics: Parameter passing, variadic functions, generators
     - The code for this lecture is up. Get it from [here](https://github.com/muscar/open4tech-intro-to-python/tree/master/lecture4).
-* **Lecture #5**: _TBA_
+* **Lecture #5**: SQLAlchemy
     - Date: 17<sup>th</sup> of July, 2014
-    - Topics: _TBA_
+    - Topics: Context managers, using SQLAlchemy
+    - The code for this lecture is up. Get it from [here](https://github.com/muscar/open4tech-intro-to-python/tree/master/lecture5).
 * **Lecture #6**: _TBA_
     - Date: 18<sup>th</sup> of July, 2014
     - Topics: _TBA_
