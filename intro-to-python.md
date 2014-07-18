@@ -30,4 +30,5 @@ procedures and file I/O.
     - The code for this lecture is up. Get it from [here](https://github.com/muscar/open4tech-intro-to-python/tree/master/lecture5).
 * **Lecture #6**: _TBA_
     - Date: 18<sup>th</sup> of July, 2014
-    - Topics: _TBA_
+    - Topics: Using Flask and SQLAlchemy
+    - The code for this lecture is up. Get it from [here](https://github.com/muscar/open4tech-intro-to-python/tree/master/lecture6).
